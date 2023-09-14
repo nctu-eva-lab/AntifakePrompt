@@ -27,6 +27,10 @@ from lavis.processors.gpt_processors import (
 )
 from lavis.processors.clip_processors import ClipImageTrainProcessor
 
+from lavis.processors.blip_processors import BlipQuestionProcessorTextInversion
+from lavis.processors.blip_processors import Blip2ImageTrainProcessorTextInversion
+from lavis.processors.blip_processors import BlipImageEvalProcessorTextInversion
+
 from lavis.common.registry import registry
 
 __all__ = [
@@ -47,6 +51,10 @@ __all__ = [
     # GPT
     "GPTVideoFeatureProcessor",
     "GPTDialogueProcessor",
+    # Textual inversion
+    "BlipQuestionProcessorTextInversion",
+    "Blip2ImageTrainProcessorTextInversion",
+    "BlipImageEvalProcessorTextInversion"
 ]
 
 

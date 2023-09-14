@@ -51,6 +51,10 @@ from lavis.models.clip_models.model import CLIP
 
 from lavis.models.gpt_models.gpt_dialogue import GPTDialogue
 
+from lavis.models.blip2_models.blip2_vicuna_instruct_textinv import Blip2VicunaInstructTextinv
+from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_freezeLLM import Blip2VicunaInstructTextinvFreezeLLM
+from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_adver_atk import Blip2VicunaInstructTextinvAdverAtk
+
 from lavis.processors.base_processor import BaseProcessor
 
 
@@ -89,6 +93,9 @@ __all__ = [
     "VisionTransformerEncoder",
     "XBertLMHeadDecoder",
     "GPTDialogue",
+    "Blip2VicunaInstructTextinv",
+    "Blip2VicunaInstructTextinvFreezeLLM",
+    "Blip2VicunaInstructTextinvAdverAtk",
 ]
 
 

@@ -1,0 +1,74 @@
+ # Copyright (c) 2022, salesforce.com, inc.
+ # All rights reserved.
+ # SPDX-License-Identifier: BSD-3-Clause
+ # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+
+model:
+  arch: blip2_vicuna_instruct_textinv_freezeLLM
+  model_type: vicuna7b
+  load_pretrained: True
+  # intialize finetuning from instructBLIP pretrained model
+  pretrained: "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/InstructBLIP/instruct_blip_vicuna7b_trimmed.pth"
+  load_finetuned: False
+  use_grad_checkpoint: True
+  freeze_vit: True
+
+  prompt: "Is this photo [*]?"
+  pseudo_word: "[*]"
+  # init_word: "real"
+
+datasets:
+  textinv: # name of the dataset builder
+    vis_processor:
+        train:
+          name: "blip2_image_train_textinv"
+          image_size: 224
+          mean: [0.47639059, 0.45423961, 0.42067098]
+          std: [0.28536293, 0.27721554, 0.29471723]
+        eval:
+          name: "blip_image_eval"
+          image_size: 224
+    text_processor:
+        train:
+          name: "blip_question_textinv"
+          prompt: "Is this photo [*]?"
+          pseudo_word: "[*]"
+        eval:
+          name: "blip_question_textinv"
+          prompt: "Is this photo [*]?"
+          pseudo_word: "[*]"
+    build_info:
+        images:
+            storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train/"
+
+run:
+  #runner: runner_textinv
+  task: textual_inversion
+  # optimizer
+  lr_sched: "linear_warmup_cosine_lr"
+  init_lr: 1e-5
+  min_lr: 0
+  warmup_lr: 1e-8
+  warmup_steps: 0
+  weight_decay: 0.05
+  max_epoch: 10
+  batch_size_train: 6
+  batch_size_eval: 8
+  num_workers: 8
+  accum_grad_iters: 1
+
+  seed: 42
+  output_dir: "output/BLIP2/Textual_inv"
+
+  amp: True
+  resume_ckpt_path: null
+
+  evaluate: False
+  train_splits: ["train"]
+  valid_splits: ["val"]
+  test_splits: ["test"]
+
+  device: "cuda"
+  world_size: 1
+  dist_url: "env://"
+  distributed: True

@@ -18,7 +18,6 @@ from lavis.datasets.datasets.video_caption_datasets import (
     VideoCaptionEvalDataset,
 )
 
-
 @registry.register_builder("coco_caption")
 class COCOCapBuilder(BaseDatasetBuilder):
     train_dataset_cls = COCOCapDataset

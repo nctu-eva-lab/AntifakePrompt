@@ -7,5 +7,6 @@
 
 from lavis.runners.runner_base import RunnerBase
 from lavis.runners.runner_iter import RunnerIter
+from lavis.runners.runner_textinv import RunnerTextinv
 
-__all__ = ["RunnerBase", "RunnerIter"]
+__all__ = ["RunnerBase", "RunnerIter", "RunnerTextinv"]

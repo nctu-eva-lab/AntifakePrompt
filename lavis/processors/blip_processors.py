@@ -100,6 +100,40 @@ class BlipQuestionProcessor(BaseProcessor):
 
         return question
 
+@registry.register_processor("blip_question_textinv")
+class BlipQuestionProcessorTextInversion(BaseProcessor):
+    def __init__(self, prompt, pseudo_word, max_words=50):
+        self.prompt = prompt
+        self.pseudo_word = pseudo_word
+        self.max_words = max_words
+
+    def __call__(self, question):
+        return self.pre_question(question)
+
+    @classmethod
+    def from_config(cls, cfg=None):
+        if cfg is None:
+            cfg = OmegaConf.create()
+
+        prompt = cfg.get("prompt")
+        pseudo_word = cfg.get("pseudo_word")
+        max_words = cfg.get("max_words", 50)
+        
+        return cls(prompt=prompt,
+                   pseudo_word=pseudo_word,
+                   max_words=max_words)
+
+    def pre_question(self, question):
+        question = question.lower()
+        question = question.rstrip(" ")
+
+        # truncate question
+        question_words = question.split(" ")
+        if len(question_words) > self.max_words:
+            question = " ".join(question_words[: self.max_words])
+
+        return question
+
 
 @registry.register_processor("blip_image_train")
 class BlipImageTrainProcessor(BlipImageBaseProcessor):
@@ -162,7 +196,6 @@ class BlipImageTrainProcessor(BlipImageBaseProcessor):
             max_scale=max_scale,
         )
 
-
 @registry.register_processor("blip_image_eval")
 class BlipImageEvalProcessor(BlipImageBaseProcessor):
     def __init__(self, image_size=384, mean=None, std=None):
@@ -172,6 +205,40 @@ class BlipImageEvalProcessor(BlipImageBaseProcessor):
             [
                 transforms.Resize(
                     (image_size, image_size), interpolation=InterpolationMode.BICUBIC
+                ),
+                transforms.ToTensor(),
+                self.normalize,
+            ]
+        )
+
+    def __call__(self, item):
+        return self.transform(item)
+
+    @classmethod
+    def from_config(cls, cfg=None):
+        if cfg is None:
+            cfg = OmegaConf.create()
+
+        image_size = cfg.get("image_size", 384)
+
+        mean = cfg.get("mean", None)
+        std = cfg.get("std", None)
+
+        return cls(image_size=image_size, mean=mean, std=std)
+    
+@registry.register_processor("blip_image_eval_textinv")
+class BlipImageEvalProcessorTextInversion(BlipImageBaseProcessor):
+    def __init__(self, image_size=224, mean=None, std=None):
+        super().__init__(mean=mean, std=std)
+
+        self.transform = transforms.Compose(
+            [
+                transforms.Resize(
+                    image_size, 
+                    interpolation=InterpolationMode.BICUBIC,
+                ),
+                transforms.CenterCrop(
+                    image_size,
                 ),
                 transforms.ToTensor(),
                 self.normalize,
@@ -236,4 +303,47 @@ class Blip2ImageTrainProcessor(BlipImageBaseProcessor):
             std=std,
             min_scale=min_scale,
             max_scale=max_scale,
+        )
+
+@registry.register_processor("blip2_image_train_textinv")
+class Blip2ImageTrainProcessorTextInversion(BlipImageBaseProcessor):
+    def __init__(
+        self, image_size=224, mean=None, std=None
+    ):
+        assert mean is not None and std is not None, "Mean and std should not be None!"
+        
+        super().__init__(mean=mean, std=std)
+
+        self.transform = transforms.Compose(
+            [
+                transforms.Resize(
+                    224, 
+                    interpolation=InterpolationMode.BICUBIC,
+                ),
+                transforms.RandomCrop(
+                    image_size,
+                ),
+                transforms.RandomHorizontalFlip(),
+                transforms.ToTensor(),
+                self.normalize,
+            ]
+        )
+
+    def __call__(self, item):
+        return self.transform(item)
+
+    @classmethod
+    def from_config(cls, cfg=None):
+        if cfg is None:
+            cfg = OmegaConf.create()
+
+        image_size = cfg.get("image_size", 224)
+
+        mean = cfg.get("mean", None)
+        std = cfg.get("std", None)
+
+        return cls(
+            image_size=image_size,
+            mean=mean,
+            std=std
         )

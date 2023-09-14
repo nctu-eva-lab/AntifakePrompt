@@ -18,6 +18,8 @@ from lavis.tasks.vqa_reading_comprehension import VQARCTask, GQARCTask
 from lavis.tasks.dialogue import DialogueTask
 from lavis.tasks.text_to_image_generation import TextToImageGenerationTask
 
+from lavis.tasks.textinv import TextualInversionTask
+
 
 def setup_task(cfg):
     assert "task" in cfg.run_cfg, "Task name must be provided."
@@ -43,5 +45,6 @@ __all__ = [
     # "VisualEntailmentTask",
     "ImageTextPretrainTask",
     "DialogueTask",
+    "TextualInversionTask",
     "TextToImageGenerationTask",
 ]

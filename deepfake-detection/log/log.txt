@@ -1,0 +1,481 @@
+data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo [*]?
+
+=== Overall ===
+Acc: 97.50%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 95.00%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+Load finetuned from: None
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+Load finetuned from: None
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo [*]?
+
+=== Overall ===
+Acc: 97.50%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 95.00%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+Load finetuned from: None
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+Load finetuned from: None
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo [*]?
+
+=== Overall ===
+Acc: 97.50%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 95.00%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+Load finetuned from: /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230729153/checkpoint_best.pth
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+Load finetuned from: /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230729153/checkpoint_best.pth
+Data csv: /eva_data0/denny/debug_label.csv
+Question: Is this photo [*]?
+
+=== Overall ===
+Acc: 97.50%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 95.00%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230729153/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/debug_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230729153/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/debug_label.csv
+[Question]  : Is this photo [*]?
+
+=== Overall ===
+Acc: 97.50%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 95.00%
+        | Pred real | Pred fake |
+GT real | 95        | 5          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[TIME]      : Fri Sep  8 21:33:58 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+[TIME]      : Fri Sep  8 21:34:16 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 96.50%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 3         | 97         |
+
+
+=== Real images ===
+Acc: 96.00%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 94.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 3         | 47         |
+
+
+=== Real images (Comb) ===
+Acc: 96.00%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images (Comb) ===
+Acc: 97.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 3         | 97         |
+
+
+[TIME]      : Fri Sep  8 21:53:42 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 75.50%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 47        | 53         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 29        | 21         |
+
+
+=== Uncommon fake images ===
+Acc: 64.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 18        | 32         |
+
+
+[TIME]      : Fri Sep  8 21:54:00 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 96.50%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 3         | 97         |
+
+
+=== Real images ===
+Acc: 96.00%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 94.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 3         | 47         |
+
+
+=== Overall (Comb) ===
+Acc: 96.50%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 3         | 97         |
+
+
+=== Real images (Comb) ===
+Acc: 96.00%
+        | Pred real | Pred fake |
+GT real | 96        | 4          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images (Comb) ===
+Acc: 97.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 3         | 97         |
+
+
