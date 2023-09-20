@@ -15,8 +15,8 @@ from lavis.common.registry import registry
 from lavis.models.blip2_models.blip2 import Blip2Base, disabled_train
 from lavis.models.blip2_models.Qformer import BertConfig, BertLMHeadModelTextualInversion
 
-@registry.register_model("blip2_vicuna_instruct_textinv_freezeLLM")
-class Blip2VicunaInstructTextinvFreezeLLM(Blip2Base):
+@registry.register_model("blip2_vicuna_instruct_textinv_freezeQformer")
+class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
     """
     BLIP2 Vicuna model.
     Supported model types:
@@ -103,12 +103,9 @@ class Blip2VicunaInstructTextinvFreezeLLM(Blip2Base):
         else:
             self.Qformer.resize_token_embeddings(len(self.tokenizer))
         
-        # NOTE: Freeze Q-former except for the pseudo-word embedding
+        # NOTE: Freeze the whole Q-former
         for name, param in self.Qformer.named_parameters():
-            if name == "bert.embeddings.train_word_embeddings.weight":
-                param.requires_grad = True
-            else:
-                param.requires_grad = False
+            param.requires_grad = False
         
         self.Qformer.cls = None
         
@@ -135,7 +132,7 @@ class Blip2VicunaInstructTextinvFreezeLLM(Blip2Base):
         #     self.llm_tokenizer.eos_token, add_special_tokens=False
         # ).input_ids[0]
 
-        # NOTE: Freeze the whole LLM
+        # NOTE: Freeze LLM except for the pseudo-word embedding
         for name, param in self.llm_model.named_parameters():
             param.requires_grad = False
 
@@ -184,35 +181,35 @@ class Blip2VicunaInstructTextinvFreezeLLM(Blip2Base):
         
         # NOTE: This function is for add the pseudo-word into the tokenizer (Qformer & LLM)
         
-        # Add pseudo-word as new token
-        n_added_tokens = self.tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
-        print(f'Added {n_added_tokens} tokens to Qformer tokenizer.')
-        assert n_added_tokens > 0, f'The pseudo-word `{pseudo_word}` has been used in vocabulary, please try another one.'
-        
-        # Initialize the pseudo-word embedding with the embedding of initial-word
-        if initial_word:
-            word_embeddings = self.Qformer.bert.get_input_embeddings()
-            init_word_token = self.tokenizer(initial_word).input_ids[0]
-            init_word_embedding = word_embeddings(torch.tensor(init_word_token, dtype=torch.int))
-            with torch.no_grad():
-                self.Qformer.bert.embeddings.train_word_embeddings.weight[0] = init_word_embedding
-                
-        # # Add new token to LLM tokenizer
-        # n_added_tokens = self.llm_tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
-        # print(f'Added {n_added_tokens} tokens to llm tokenizer.')
+        # # Add pseudo-word as new token
+        # n_added_tokens = self.tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
+        # print(f'Added {n_added_tokens} tokens to Qformer tokenizer.')
         # assert n_added_tokens > 0, f'The pseudo-word `{pseudo_word}` has been used in vocabulary, please try another one.'
-
-        # # Initialize the new embedding with the embedding of initial-word
+        
+        # # Initialize the pseudo-word embedding with the embedding of initial-word
         # if initial_word:
-        #     word_embeddings = self.llm_model.get_input_embeddings()
-        #     init_word_token = self.llm_tokenizer(initial_word).input_ids[0]
+        #     word_embeddings = self.Qformer.bert.get_input_embeddings()
+        #     init_word_token = self.tokenizer(initial_word).input_ids[0]
         #     init_word_embedding = word_embeddings(torch.tensor(init_word_token, dtype=torch.int))
         #     with torch.no_grad():
-        #         self.llm_model.model.train_embed_tokens.weight[0] = init_word_embedding
+        #         self.Qformer.bert.embeddings.train_word_embeddings.weight[0] = init_word_embedding
+                
+        # Add new token to LLM tokenizer
+        n_added_tokens = self.llm_tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
+        print(f'Added {n_added_tokens} tokens to llm tokenizer.')
+        assert n_added_tokens > 0, f'The pseudo-word `{pseudo_word}` has been used in vocabulary, please try another one.'
+
+        # Initialize the new embedding with the embedding of initial-word
+        if initial_word:
+            word_embeddings = self.llm_model.get_input_embeddings()
+            init_word_token = self.llm_tokenizer(initial_word).input_ids[0]
+            init_word_embedding = word_embeddings(torch.tensor(init_word_token, dtype=torch.int))
+            with torch.no_grad():
+                self.llm_model.model.train_embed_tokens.weight[0] = init_word_embedding
         
-        # # Re-tokenize the prompt
-        # prompt_tokens = self.llm_tokenizer(self.prompt, return_tensors="pt")
-        # self.prompt_length = prompt_tokens.attention_mask.sum(1)
+        # Re-tokenize the prompt
+        prompt_tokens = self.llm_tokenizer(self.prompt, return_tensors="pt")
+        self.prompt_length = prompt_tokens.attention_mask.sum(1)
     
     def concat_text_input_output(self, input_ids, input_atts, output_ids, output_atts):
         input_part_targets_len = []

@@ -13,7 +13,8 @@ model:
   use_grad_checkpoint: True
   freeze_vit: True
 
-  prompt: "Is this photo real [*]?"
+  prompt: "[*] Is this photo real?"
+  # prompt: "Is this photo [*]?"
   pseudo_word: "[*]"
   # init_word: "real"
 
@@ -23,23 +24,23 @@ datasets:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          mean: [0.50842627, 0.48434118, 0.44216471]
-          std: [0.30619647, 0.29232471, 0.3106451]
+          mean: [0.47933451, 0.45507176, 0.42030941]
+          std: [0.28134902, 0.27169059, 0.28941137]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
     text_processor:
         train:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
+          prompt: "[*] Is this photo real?"
           pseudo_word: "[*]"
         eval:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
+          prompt: "[*] Is this photo real?"
           pseudo_word: "[*]"
     build_info:
         images:
-            storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train_COCO_IF/"
+            storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train_COCO_SD2_label.csv"
 
 run:
   #runner: runner_textinv
