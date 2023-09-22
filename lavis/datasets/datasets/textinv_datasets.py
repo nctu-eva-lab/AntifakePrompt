@@ -57,4 +57,5 @@ class TextInvDataset(BaseDataset):
             "image": image,
             "text_input": self.text_processor.prompt,
             "text_output": groundTruth,
+            "text_input_freeze": self.text_processor.prompt_freeze,
         }

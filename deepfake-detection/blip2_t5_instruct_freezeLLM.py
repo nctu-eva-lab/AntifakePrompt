@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="7"
+os.environ["CUDA_VISIBLE_DEVICES"]="6"
 print(os.environ["CUDA_VISIBLE_DEVICES"])
 
 from PIL import Image
@@ -144,18 +144,20 @@ class InstructBLIP():
         
         return self.acc, self.confusion_mat, self.ans_list
     
-    def QueryImgs_batch(self, question, true_string="yes", logPath='log.txt'):
+    def QueryImgs_batch(self, question, true_string="yes", logPath='log.txt', question_LLM="Is this photo real?"):
         self.labels = []
         self.label_3class = []
         self.ans_list = []
         self.question = question
+        self.question_LLM = question_LLM
         
         for image, label, is_uncommon in tqdm(self.dataloader):
             
             image = image.to(self.device)
             
             questions = [self.question] * image.shape[0]
-            samples = {"image": image, "text_input": questions}
+            question_LLM = [self.question_LLM] * image.shape[0]
+            samples = {"image": image, "text_input": questions, "text_input_LLM": question_LLM}
             
             ans = self.model.predict_answers(samples=samples, inference_method="generate", answer_list=["yes", "no"])
             pred_label = [0 if a == true_string else 1 for a in ans]
@@ -322,24 +324,27 @@ def print_combine_result(pretrained_ans, finetuned_ans, label, logPath):
 
 def main():
     
+    logPath = '/home/denny/LAVIS/deepfake-detection/log/log.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_postfix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SDXL_postfix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/IF_postfix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_imbalance_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k30k30k_prefix_onlyCommon.txt'
-    logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k30k30k_replace_onlyCommon.txt'
+    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_prefix_onlyCommon.txt'
+    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_replace_onlyCommon.txt'
     
     q1 = "Is this photo real?"
-    # q2 = "Is this photo real [*]?"
+    q2 = "Is this photo real [*]?"
     # q2 = "[*] Is this photo real?"
-    q2 = "Is this photo [*]?"
+    # q2 = "Is this photo [*]?"
+    
+    q_LLM = "Is this photo real?"
     
     file = open(logPath, 'a')
     file.close()
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model, vis_processors, txt_processors = load_model_and_preprocess(name="blip2_vicuna_instruct_textinv", model_type="vicuna7b", is_eval=True, device=device)
+    model, vis_processors, txt_processors = load_model_and_preprocess(name="blip2_vicuna_instruct_textinv_freezeLLM", model_type="vicuna7b", is_eval=True, device=device)
     
     print(f'Load model OK!')
     
@@ -351,23 +356,20 @@ def main():
     print(f'Q2: {q2}')
     
     csvfiles = [
-        # "/eva_data0/denny/textual_inversion/debug_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv", 
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_IF_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Control_COCO_label.csv",
-        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lama_label.csv",
-        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2IP_label.csv",
-        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lte_label.csv",
-        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2SR_label.csv",
-        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_AdvAtk_Imagenet_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Backdoor_Imagenet_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DataPoison_Imagenet_label.csv",
+        "/eva_data0/denny/textual_inversion/debug_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv", 
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_IF_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Control_COCO_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_lama_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_lte_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_AdvAtk_Imagenet_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Backdoor_Imagenet_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DataPoison_Imagenet_label.csv",
         ]
     
     for csv_path in csvfiles:
@@ -375,12 +377,12 @@ def main():
         print(f'Load data from {csv_path}')
         
         question = q1
-        acc, confusion_mat, pretrained_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, true_string="yes", logPath=logPath)
+        acc, confusion_mat, pretrained_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, question_LLM=q_LLM, true_string="yes", logPath=logPath)
         print(f'Question: {question}')
         print(f'Acc: {acc*100:.2f}%')
 
         question = q2
-        acc, confusion_mat, finetuned_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, true_string="yes", logPath=logPath)
+        acc, confusion_mat, finetuned_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, question_LLM=q_LLM, true_string="yes", logPath=logPath)
         print(f'Question: {question}')
         print(f'Acc: {acc*100:.2f}%')
         

@@ -15,7 +15,9 @@ model:
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230911185/checkpoint_best.pth" # SD2+IP(imbalance)
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230912013/checkpoint_best.pth" # SD2+IP(balance)
   # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919125/checkpoint_best.pth" # SD2+IP (balance, prefix)
-  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth" # SD2+IP (90/30/30, prefix)
+  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth" # SD2+IP (90/30/30, replace)
 
   # vit encoder
   image_size: 224
@@ -41,11 +43,15 @@ preprocess:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          mean: [0.47639059, 0.45423961, 0.42067098]
-          std: [0.28536293, 0.27721554, 0.29471723]
+          # COCO (90k) + SD2 + SD2IP 
+          mean: [0.4730, 0.4499, 0.4129]
+          std: [0.2780, 0.2713, 0.2872]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
+          # COCO (90k) + SD2 + SD2IP 
+          mean: [0.4730, 0.4499, 0.4129]
+          std: [0.2780, 0.2713, 0.2872]
     text_processor:
         train:
           name: "blip_question_textinv"

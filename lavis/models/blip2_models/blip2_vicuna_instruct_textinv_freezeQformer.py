@@ -28,7 +28,7 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
     """
 
     PRETRAINED_MODEL_CONFIG_DICT = {
-        "vicuna7b": "configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml",
+        "vicuna7b": "configs/models/blip2/blip2_instruct_vicuna7b_textinv_freezeQformer.yaml",
         "vicuna13b": "configs/models/blip2/blip2_instruct_vicuna13b.yaml",
     }
 
@@ -56,7 +56,8 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         transformers_version = version.parse(transformers.__version__)
         assert transformers_version >= version.parse("4.28"), "BLIP-2 Vicuna requires transformers>=4.28"        
         from transformers import LlamaTokenizer
-        from lavis.models.blip2_models.modeling_llama import LlamaForCausalLM
+        # from lavis.models.blip2_models.modeling_llama import LlamaForCausalLM
+        from lavis.models.blip2_models.modeling_llama import LlamaForCausalLMTextualInversion
         
         #------ Init -----#
         self.pseudo_word = pseudo_word
@@ -119,10 +120,10 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         self.llm_tokenizer.add_special_tokens({'pad_token': '[PAD]'})
         self.llm_tokenizer.add_special_tokens({'bos_token': '</s>'})
         self.llm_tokenizer.add_special_tokens({'eos_token': '</s>'})
-        self.llm_tokenizer.add_special_tokens({'unk_token': '</s>'})
+        # self.llm_tokenizer.add_special_tokens({'unk_token': '</s>'})
         # self.llm_tokenizer.pad_token = self.llm_tokenizer.unk_token
         
-        self.llm_model = LlamaForCausalLM.from_pretrained(
+        self.llm_model = LlamaForCausalLMTextualInversion.from_pretrained(
             llm_model, torch_dtype=torch.float16
         )
 
@@ -134,7 +135,10 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
 
         # NOTE: Freeze LLM except for the pseudo-word embedding
         for name, param in self.llm_model.named_parameters():
-            param.requires_grad = False
+            if name == "model.train_embed_tokens.weight":
+                param.requires_grad = True
+            else:
+                param.requires_grad = False
 
         self.llm_proj = nn.Linear(
             self.Qformer.config.hidden_size, self.llm_model.config.hidden_size
@@ -240,7 +244,7 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         # print(samples["text_input"])
         # print(samples["text_output"])
         # print('-----------------')
-
+        
         image = samples["image"]
         with self.maybe_autocast():
             image_embeds = self.ln_vision(self.visual_encoder(image))
@@ -251,7 +255,8 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         query_tokens = self.query_tokens.expand(image_embeds.shape[0], -1, -1)
         if self.qformer_text_input:
             text_Qformer = self.tokenizer(
-                samples["text_input"],
+                # samples["text_input"],
+                samples["text_input_freeze"],
                 padding='longest',
                 truncation=True,
                 max_length=self.max_txt_len,
@@ -320,7 +325,26 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         )
         targets = torch.cat([empty_targets, targets], dim=1)
 
-        inputs_embeds = self.llm_model.get_input_embeddings()(llm_tokens['input_ids'])
+        # inputs_embeds = self.llm_model.get_input_embeddings()(llm_tokens['input_ids'])
+        
+        # NOTE: This is the process that turn the sentence containing the pseudo-word into embeddigns
+        # NOTE: The tokenizer length is less than original embedding size by 1 (which is the token of pseudo-word),
+        # NOTE: so if the `token_id` is greater than the size of original embedding, the word is pseudo-word
+        
+        vocab_size = self.llm_model.get_input_embeddings().num_embeddings
+        input_ids = llm_tokens['input_ids']
+        train_word_mask = (input_ids >= vocab_size) # The position of pseudo words
+        
+        pretrained_input_ids = input_ids.clone()
+        pretrained_input_ids[train_word_mask] = 0 # input_id of pseudo_word set to 0
+        inputs_embeds = self.llm_model.get_input_embeddings()(pretrained_input_ids) # turn those non-pseudo-words into embeddings
+        
+        input_ids = input_ids - vocab_size # in order to use the trained embedding, shift the token_id
+        input_ids[~train_word_mask] = 0 # input_id of pretrained words set to 0
+        train_inputs_embeds = self.llm_model.model.train_embed_tokens(input_ids) # turn the pseudo-word into embedding
+        
+        inputs_embeds[train_word_mask] = train_inputs_embeds[train_word_mask] # Replace the pretrained weight
+        # -------------------------------------------------------------- #
         inputs_embeds = torch.cat([inputs_llm, inputs_embeds], dim=1)
         attention_mask = torch.cat([atts_llm, llm_tokens['attention_mask']], dim=1)
 
@@ -357,7 +381,7 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         else:
             prompt = self.prompt
             
-        prompt_LLM = samples["prompt_LLM"]
+        prompt_Qformer = samples["prompt_Qformer"]
 
         image = samples["image"]
 
@@ -367,6 +391,11 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
             prompt = [prompt] * bs
         else:
             assert len(prompt) == bs, "The number of prompts must be equal to the batch size."
+            
+        if isinstance(prompt_Qformer, str):
+            prompt_Qformer = [prompt_Qformer] * bs
+        else:
+            assert len(prompt_Qformer) == bs, "The number of prompts must be equal to the batch size."
 
         # For TextCaps
         if "ocr_tokens" in samples.keys() and "{}" in prompt[0]:
@@ -379,7 +408,7 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
             # qformer_prompt = ['Question: ' + qp.split(' Question: ')[1] for qp in qformer_prompt]
 
             text_Qformer = self.tokenizer(
-                prompt,
+                prompt_Qformer,
                 padding='longest',
                 truncation=True,
                 max_length=self.max_txt_len,
@@ -447,17 +476,38 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
             atts_llm = torch.ones(inputs_llm.size()[:-1], dtype=torch.long).to(image.device)
 
         llm_tokens = self.llm_tokenizer(
-            # prompt,
-            prompt_LLM,
+            prompt,
             padding="longest",
             return_tensors="pt"
         ).to(image.device)
 
         with self.maybe_autocast():
-            inputs_embeds = self.llm_model.get_input_embeddings()(llm_tokens.input_ids)
+            # inputs_embeds = self.llm_model.get_input_embeddings()(llm_tokens.input_ids)
+            
+            # NOTE: This is the process that turn the sentence containing the pseudo-word into embeddigns
+            # NOTE: The tokenizer length is less than original embedding size by 1 (which is the token of pseudo-word),
+            # NOTE: so if the `token_id` is greater than the size of original embedding, the word is pseudo-word
+            
+            vocab_size = self.llm_model.get_input_embeddings().num_embeddings
+            input_ids = llm_tokens['input_ids']
+            train_word_mask = (input_ids >= vocab_size)
+            
+            pretrained_input_ids = input_ids.clone()
+            pretrained_input_ids[train_word_mask] = 0 # input_id of pseudo_wrod set to 0
+            inputs_embeds = self.llm_model.get_input_embeddings()(pretrained_input_ids)
+            
+            input_ids = input_ids - vocab_size
+            input_ids[~train_word_mask] = 0
+            train_inputs_embeds = self.llm_model.model.train_embed_tokens(input_ids)
+            
+            inputs_embeds[train_word_mask] = train_inputs_embeds[train_word_mask]
+            # NOTE: Below is the same
+            
             inputs_embeds = torch.cat([inputs_llm, inputs_embeds], dim=1)
             attention_mask = torch.cat([atts_llm, llm_tokens.attention_mask], dim=1)
 
+            print(inputs_embeds.shape)
+            print(attention_mask.shape)
             outputs = self.llm_model.generate(
                 inputs_embeds=inputs_embeds,
                 attention_mask=attention_mask,
@@ -495,8 +545,8 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
         if isinstance(samples["text_input"], str):
             samples["text_input"] = [samples["text_input"]]
             
-        if isinstance(samples["text_input_LLM"], str):
-            samples["text_input_LLM"] = [samples["text_input_LLM"]]
+        if isinstance(samples["text_input_Qformer"], str):
+            samples["text_input_Qformer"] = [samples["text_input_Qformer"]]
 
         if prompt:
             if prompt.count("{}") == 2:
@@ -512,11 +562,13 @@ class Blip2VicunaInstructTextinvFreezeQformer(Blip2Base):
                         text_input.append(prompt.format(samples["text_input"][i], this_choices))
             else:
                 text_input = [prompt.format(question) for question in samples["text_input"]]
+                text_input_Qformer = [prompt.format(question) for question in samples["text_input_Qformer"]]
         else:
             text_input = samples["text_input"]
+            text_input_Qformer = samples["text_input_Qformer"]
 
         samples["prompt"] = text_input
-        samples["prompt_LLM"] = samples["text_input_LLM"]
+        samples["prompt_Qformer"] = text_input_Qformer
 
         output_text = self.generate(
             samples,

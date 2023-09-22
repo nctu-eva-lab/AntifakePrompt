@@ -4,7 +4,7 @@
  # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
 model:
-  arch: blip2_vicuna_instruct_textinv_freezeLLM
+  arch: blip2_vicuna_instruct_textinv_freezeQformer
   model_type: vicuna7b
   load_pretrained: True
   # intialize finetuning from instructBLIP pretrained model
@@ -45,7 +45,7 @@ datasets:
           pseudo_word: "[*]"
     build_info:
         images:
-            storage: "/eva_data1/iammingggg/textual_inversion/60k_6k_6k/train_COCO_90k_SD2_SD2IP_label.csv"
+            storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train/"
 
 run:
   #runner: runner_textinv
