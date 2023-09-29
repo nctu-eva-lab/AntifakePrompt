@@ -1,0 +1,87 @@
+[TIME]      : Sun Sep 24 01:11:52 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_120k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_faceOnly_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 13.80%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 2586      | 414        |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 13.80%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 2586      | 414        |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Sun Sep 24 01:16:25 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_120k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_faceOnly_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 94.63%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 161       | 2839       |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 94.63%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 161       | 2839       |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Overall (Comb) ===
+Acc: 94.63%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 161       | 2839       |
+
+
+=== Real images (Comb) ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images (Comb) ===
+Acc: 94.63%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 161       | 2839       |
+
+

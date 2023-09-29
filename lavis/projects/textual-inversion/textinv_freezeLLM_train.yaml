@@ -23,15 +23,27 @@ datasets:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          # COCO (90k) + SD2 + SD2IP 
-          mean: [0.4730, 0.4499, 0.4129]
-          std: [0.2780, 0.2713, 0.2872]
+          # COCO (60k) + SD2 + SD2IP 
+          mean: [0.4739, 0.4508, 0.4143]
+          std: [0.2778, 0.2706, 0.2868]
+          # # COCO (90k) + SD2 + SD2IP 
+          # mean: [0.4730, 0.4499, 0.4129]
+          # std: [0.2780, 0.2713, 0.2872]
+          # # COCO (120k) + SD2 + SD2IP 
+          # mean: [0.4723, 0.4492, 0.4119]
+          # std: [0.2781, 0.2717, 0.2874]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
-          # COCO (90k) + SD2 + SD2IP 
-          mean: [0.4730, 0.4499, 0.4129]
-          std: [0.2780, 0.2713, 0.2872]
+          # COCO (60k) + SD2 + SD2IP 
+          mean: [0.4739, 0.4508, 0.4143]
+          std: [0.2778, 0.2706, 0.2868]
+          # # COCO (90k) + SD2 + SD2IP 
+          # mean: [0.4730, 0.4499, 0.4129]
+          # std: [0.2780, 0.2713, 0.2872]
+          # # COCO (120k) + SD2 + SD2IP 
+          # mean: [0.4723, 0.4492, 0.4119]
+          # std: [0.2781, 0.2717, 0.2874]
     text_processor:
         train:
           name: "blip_question_textinv"
@@ -45,7 +57,7 @@ datasets:
           pseudo_word: "[*]"
     build_info:
         images:
-            storage: "/eva_data1/iammingggg/textual_inversion/60k_6k_6k/train_COCO_90k_SD2_SD2IP_label.csv"
+            storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_120k_SD2_SD2IP_label.csv"
 
 run:
   #runner: runner_textinv

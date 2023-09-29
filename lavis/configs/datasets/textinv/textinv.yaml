@@ -13,19 +13,37 @@ datasets:
       # Be careful not to append minus sign (-) before split to avoid itemizing
       annotations:
         train:
-          url: "/eva_data0/denny/textual_inversion/60k_6k_6k/train_COCO_SD2_label.csv"
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train_COCO_SD2_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_60k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_60k_SD2_SD2IP_label.csv"
+          url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_90k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_90k_SD2_SD2IP_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_120k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_120k_SD2_SD2IP_label.csv"
         val:
-          url: "/eva_data0/denny/textual_inversion/60k_6k_6k/val_COCO_SD2_label.csv"
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/val_COCO_SD2_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_60k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_60k_SD2_SD2IP_label.csv"
+          url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_90k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_90k_SD2_SD2IP_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_120k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_120k_SD2_SD2IP_label.csv"
         test:
-          url: "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_SD2_label.csv"
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_SD2_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_60k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_60k_SD2_SD2IP_label.csv"
+          url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_90k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_90k_SD2_SD2IP_label.csv"
+          # url: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_120k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_120k_SD2_SD2IP_label.csv"
       images:
         train:
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/train_COCO_SD2_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_60k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_90k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/train_COCO_120k_SD2_SD2IP_label.csv"
         val:
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/val_COCO_SD2_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_60k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_90k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/val_COCO_120k_SD2_SD2IP_label.csv"
         test:
-          storage: "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_SD2_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_60k_SD2_SD2IP_label.csv"
+          storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_90k_SD2_SD2IP_label.csv"
+          # storage: "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_120k_SD2_SD2IP_label.csv"
 

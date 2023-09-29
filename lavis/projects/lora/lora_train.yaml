@@ -4,7 +4,7 @@
  # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
 model:
-  arch: blip2_vicuna_instruct_textinv
+  arch: blip2_vicuna_instruct_lora
   model_type: vicuna7b
   load_pretrained: True
   # intialize finetuning from instructBLIP pretrained model
@@ -13,10 +13,12 @@ model:
   use_grad_checkpoint: True
   freeze_vit: True
 
-  prompt: "Is this photo real [*]?"
-  # prompt: "Is this photo [*]?"
+  prompt: "Is this photo real?"
   pseudo_word: "[*]"
-  # init_word: "real"
+
+  lora_on_Qformer: True
+  lora_on_LLM: True
+  lora_inference_mode: False
 
 datasets:
   textinv: # name of the dataset builder
@@ -36,11 +38,11 @@ datasets:
     text_processor:
         train:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
+          prompt: "Is this photo real?"
           pseudo_word: "[*]"
         eval:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
+          prompt: "Is this photo real?"
           pseudo_word: "[*]"
     build_info:
         images:

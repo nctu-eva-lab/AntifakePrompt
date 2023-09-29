@@ -54,6 +54,7 @@ from lavis.models.gpt_models.gpt_dialogue import GPTDialogue
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv import Blip2VicunaInstructTextinv
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_freezeLLM import Blip2VicunaInstructTextinvFreezeLLM
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_freezeQformer import Blip2VicunaInstructTextinvFreezeQformer
+from lavis.models.blip2_models.blip2_vicuna_instruct_lora import Blip2VicunaInstructLoRA
 
 from lavis.processors.base_processor import BaseProcessor
 
@@ -96,6 +97,7 @@ __all__ = [
     "Blip2VicunaInstructTextinv",
     "Blip2VicunaInstructTextinvFreezeLLM",
     "Blip2VicunaInstructTextinvFreezeQformer",
+    "Blip2VicunaInstructLoRA",
 ]
 
 
@@ -205,6 +207,9 @@ def load_model_and_preprocess(name, model_type, is_eval=False, device="cpu"):
         txt_processors (dict): preprocessors for text inputs.
     """
     model_cls = registry.get_model_class(name)
+    
+    # load config
+    cfg = OmegaConf.load(model_cls.default_config_path(model_type))
 
     # load model
     model = model_cls.from_pretrained(model_type=model_type)
@@ -213,7 +218,6 @@ def load_model_and_preprocess(name, model_type, is_eval=False, device="cpu"):
         model.eval()
 
     # load preprocess
-    cfg = OmegaConf.load(model_cls.default_config_path(model_type))
     if cfg is not None:
         preprocess_cfg = cfg.preprocess
 

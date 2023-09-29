@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 print(os.environ["CUDA_VISIBLE_DEVICES"])
 
 from PIL import Image
@@ -144,21 +144,20 @@ class InstructBLIP():
         
         return self.acc, self.confusion_mat, self.ans_list
     
-    def QueryImgs_batch(self, question, true_string="yes", logPath='log.txt', question_LLM="Is this photo real?"):
+    def QueryImgs_batch(self, question, true_string="yes", logPath='log.txt'):
         self.labels = []
         self.label_3class = []
         self.ans_list = []
         self.question = question
-        self.question_LLM = question_LLM
         
         for image, label, is_uncommon in tqdm(self.dataloader):
             
             image = image.to(self.device)
             
             questions = [self.question] * image.shape[0]
-            question_LLM = [self.question_LLM] * image.shape[0]
-            samples = {"image": image, "text_input": questions, "text_input_LLM": question_LLM}
+            samples = {"image": image, "text_input": questions}
             
+            # ans = self.model.predict_answers(samples=samples, inference_method="generate")
             ans = self.model.predict_answers(samples=samples, inference_method="generate", answer_list=["yes", "no"])
             pred_label = [0 if a == true_string else 1 for a in ans]
             self.ans_list += pred_label
@@ -325,35 +324,19 @@ def print_combine_result(pretrained_ans, finetuned_ans, label, logPath):
 def main():
     
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/log.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_postfix_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SDXL_postfix_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/IF_postfix_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_imbalance_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_prefix_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_replace_onlyCommon.txt'
-    
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_60k_postfix_freezeLLM_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_120k_postfix_freezeLLM_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_postfix_freezeLLM_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_prefix_freezeLLM_onlyCommon.txt'
-    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_replace_freezeLLM_onlyCommon.txt'
-    
-    logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_lama_90k_replace_freezeLLM_onlyCommon.txt'
-    
+    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_lora_onlyCommon.txt'
+    # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_loraOnQformer_onlyCommon.txt'
+    logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_loraOnLLM_onlyCommon.txt'
     
     q1 = "Is this photo real?"
-    # q2 = "Is this photo real [*]?"
-    # q2 = "[*] Is this photo real?"
-    q2 = "Is this photo [*]?"
-    
-    q_LLM = "Is this photo real?"
+    # q1 = "Is this photo fake?"
+    # q2 = "Is this photo real?"
     
     file = open(logPath, 'a')
     file.close()
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model, vis_processors, txt_processors = load_model_and_preprocess(name="blip2_vicuna_instruct_textinv_freezeLLM", model_type="vicuna7b", is_eval=True, device=device)
+    model, vis_processors, txt_processors = load_model_and_preprocess(name="blip2_vicuna_instruct_lora", model_type="vicuna7b", is_eval=True, device=device)
     
     print(f'Load model OK!')
     
@@ -362,14 +345,14 @@ def main():
     
     print(f'Log path: {logPath}')
     print(f'Q1: {q1}')
-    print(f'Q2: {q2}')
+    # print(f'Q2: {q2}')
     
     csvfiles = [
         # "/eva_data0/denny/textual_inversion/debug_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv",
-        "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv", 
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv",
+        # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv", 
         "/eva_data0/denny/textual_inversion/60k_6k_6k/test_IF_label.csv",
         "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv",
         "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv",
@@ -389,18 +372,18 @@ def main():
         print(f'Load data from {csv_path}')
         
         question = q1
-        acc, confusion_mat, pretrained_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, question_LLM=q_LLM, true_string="yes", logPath=logPath)
+        acc, confusion_mat, pretrained_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, true_string="yes", logPath=logPath)
         print(f'Question: {question}')
         print(f'Acc: {acc*100:.2f}%')
 
-        question = q2
-        acc, confusion_mat, finetuned_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, question_LLM=q_LLM, true_string="yes", logPath=logPath)
-        print(f'Question: {question}')
-        print(f'Acc: {acc*100:.2f}%')
+        # question = q2
+        # acc, confusion_mat, finetuned_ans_list, labels, label_3class = instruct.QueryImgs_batch(question=question, true_string="yes", logPath=logPath)
+        # print(f'Question: {question}')
+        # print(f'Acc: {acc*100:.2f}%')
         
-        comb_acc, comb_confusion_mat, comb_ans = print_combine_result(pretrained_ans_list, finetuned_ans_list, labels, logPath=logPath)
-        print(f'[Combination]')
-        print(f'Acc: {comb_acc*100:.2f}%')
+        # comb_acc, comb_confusion_mat, comb_ans = print_combine_result(pretrained_ans_list, finetuned_ans_list, labels, logPath=logPath)
+        # print(f'[Combination]')
+        # print(f'Acc: {comb_acc*100:.2f}%')
         
 
 if __name__ == '__main__':

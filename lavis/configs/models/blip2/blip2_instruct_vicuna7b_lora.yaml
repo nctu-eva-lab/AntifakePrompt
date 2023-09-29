@@ -4,34 +4,15 @@
  # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
 model:
-  arch: blip2_vicuna_instruct_textinv
+  arch: blip2_vicuna_instruct_lora
   load_finetuned: True
   load_pretrained: True
 
   pretrained: "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/InstructBLIP/instruct_blip_vicuna7b_trimmed.pth"
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901120/checkpoint_best.pth" # SD2
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901121/checkpoint_best.pth" # SDXL
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth" # IF
-  # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230911185/checkpoint_best.pth" # SD2+IP(imbalance)
-  # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230912013/checkpoint_best.pth" # SD2+IP(balance)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919125/checkpoint_best.pth" # SD2+IP (balance, prefix)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_60k_SD2_SD2IP.pth" # SD2+IP (60k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_120k_SD2_SD2IP.pth" # SD2+IP (120k, postfix)
-  finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth" # SD2+IP (90k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP_lama.pth" # SD2+IP+Lama (90k, postfix)
-
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth" # SD2+IP (90k, prefix)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth" # SD2+IP (90k, replace)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_9k_SD2_SD2IP.pth" # SD2+IP (9k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_900_SD2_SD2IP.pth" # SD2+IP (900, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90_SD2_SD2IP.pth" # SD2+IP (90, postfix)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_SD2_SD2IP_imbalance.pth" # SD2+IP (30k, postfix)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230925210/checkpoint_best.pth" # SD2+IP (90k, lora)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230925210/checkpoint_best.pth" # SD2+IP (90k, lora on Q)
+  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230926184/checkpoint_best.pth" # SD2+IP (90k, lora on LLM)
   
-
   # vit encoder
   image_size: 224
   drop_path_rate: 0
@@ -46,11 +27,14 @@ model:
   llm_model: "/eva_data0/denny/vicuna-7b-v1.3"
 
   # generation configs
-  prompt: "Is this photo real [*]?"
-  # prompt: "[*] Is this photo real?"
-  # prompt: "Is this photo [*]?"
+  prompt: "Is this photo real?"
   pseudo_word: "[*]"
   # init_word: "real"
+
+  # lora
+  lora_on_Qformer: False
+  lora_on_LLM: True
+  lora_inference_mode: True
 
 
 preprocess:
@@ -106,13 +90,9 @@ preprocess:
     text_processor:
         train:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
-          # prompt: "[*] Is this photo real?"
-          # prompt: "Is this photo [*]?"
+          prompt: "Is this photo real?"
           pseudo_word: "[*]"
         eval:
           name: "blip_question_textinv"
-          prompt: "Is this photo real [*]?"
-          # prompt: "[*] Is this photo real?"
-          # prompt: "Is this photo [*]?"
+          prompt: "Is this photo real?"
           pseudo_word: "[*]"

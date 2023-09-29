@@ -15,7 +15,17 @@ model:
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230911185/checkpoint_best.pth" # SD2+IP(imbalance)
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230912013/checkpoint_best.pth" # SD2+IP(balance)
   # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919125/checkpoint_best.pth" # SD2+IP (balance, prefix)
-  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230923120/checkpoint_best.pth" # SD2+IP (60k, postfix, freezeLLM)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230923001/checkpoint_best.pth" # SD2+IP (120k, postfix, freezeLLM)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230922025/checkpoint_best.pth" # SD2+IP (90k, postfix, freezeLLM)
+
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230922235/checkpoint_best.pth" # SD2+IP (90k, prefix, freezeLLM)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230923000/checkpoint_best.pth" # SD2+IP (90k, replace, freezeLLM)
+
+  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230923204/checkpoint_best.pth" # SD2+IP+lama (90k, postfix, freezeLLM)
+  
 
   # vit encoder
   image_size: 224
@@ -41,15 +51,33 @@ preprocess:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          # COCO (90k) + SD2 + SD2IP 
-          mean: [0.4730, 0.4499, 0.4129]
-          std: [0.2780, 0.2713, 0.2872]
+          # # COCO (60k) + SD2 + SD2IP 
+          # mean: [0.4739, 0.4508, 0.4143]
+          # std: [0.2778, 0.2706, 0.2868]
+          # # COCO (90k) + SD2 + SD2IP 
+          # mean: [0.4730, 0.4499, 0.4129]
+          # std: [0.2780, 0.2713, 0.2872]
+          # # COCO (120k) + SD2 + SD2IP 
+          # mean: [0.4723, 0.4492, 0.4119]
+          # std: [0.2781, 0.2717, 0.2874]
+          # COCO (90k) + SD2 + SD2IP + lama
+          mean: [0.4722, 0.4490, 0.4117]
+          std: [0.2772, 0.2708, 0.2867]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
-          # COCO (90k) + SD2 + SD2IP 
-          mean: [0.4730, 0.4499, 0.4129]
-          std: [0.2780, 0.2713, 0.2872]
+          # # COCO (60k) + SD2 + SD2IP 
+          # mean: [0.4739, 0.4508, 0.4143]
+          # std: [0.2778, 0.2706, 0.2868]
+          # # COCO (90k) + SD2 + SD2IP 
+          # mean: [0.4730, 0.4499, 0.4129]
+          # std: [0.2780, 0.2713, 0.2872]
+          # # COCO (120k) + SD2 + SD2IP 
+          # mean: [0.4723, 0.4492, 0.4119]
+          # std: [0.2781, 0.2717, 0.2874]
+          # COCO (90k) + SD2 + SD2IP + lama
+          mean: [0.4722, 0.4490, 0.4117]
+          std: [0.2772, 0.2708, 0.2867]
     text_processor:
         train:
           name: "blip_question_textinv"

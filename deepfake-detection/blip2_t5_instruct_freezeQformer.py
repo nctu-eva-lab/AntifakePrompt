@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="7"
+os.environ["CUDA_VISIBLE_DEVICES"]="3"
 print(os.environ["CUDA_VISIBLE_DEVICES"])
 
 from PIL import Image
@@ -324,7 +324,7 @@ def print_combine_result(pretrained_ans, finetuned_ans, label, logPath):
 
 def main():
     
-    logPath = '/home/denny/LAVIS/deepfake-detection/log/log.txt'
+    # logPath = '/home/denny/LAVIS/deepfake-detection/log/log.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_postfix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SDXL_postfix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/IF_postfix_onlyCommon.txt'
@@ -332,6 +332,9 @@ def main():
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_prefix_onlyCommon.txt'
     # logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_balance_replace_onlyCommon.txt'
+    
+    logPath = '/home/denny/LAVIS/deepfake-detection/log/SD2_SD2IP_90k_postfix_freezeQformer_onlyCommon.txt'
+    
     
     q1 = "Is this photo real?"
     q2 = "Is this photo real [*]?"
@@ -356,7 +359,7 @@ def main():
     print(f'Q2: {q2}')
     
     csvfiles = [
-        "/eva_data0/denny/textual_inversion/debug_label.csv",
+        # "/eva_data0/denny/textual_inversion/debug_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv",
@@ -365,8 +368,11 @@ def main():
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Control_COCO_label.csv",
-        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_lama_label.csv",
-        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_COCO_lte_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lama_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2IP_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lte_label.csv",
+        # "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2SR_label.csv",
+        "/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_faceOnly_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_AdvAtk_Imagenet_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_Backdoor_Imagenet_label.csv",
         # "/eva_data0/denny/textual_inversion/60k_6k_6k/test_DataPoison_Imagenet_label.csv",

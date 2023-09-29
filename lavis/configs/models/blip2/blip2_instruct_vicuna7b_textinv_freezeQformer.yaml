@@ -15,7 +15,9 @@ model:
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230911185/checkpoint_best.pth" # SD2+IP(imbalance)
   # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230912013/checkpoint_best.pth" # SD2+IP(balance)
   # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919125/checkpoint_best.pth" # SD2+IP (balance, prefix)
-  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
+
+  finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230922031/checkpoint_best.pth" # SD2+IP (90k, postfix, freezeQ)
 
   # vit encoder
   image_size: 224

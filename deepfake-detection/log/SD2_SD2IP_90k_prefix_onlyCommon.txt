@@ -1,5 +1,5 @@
-[TIME]      : Fri Sep 22 02:21:02 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:17:00 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
 [Question]  : Is this photo real?
 
@@ -31,22 +31,22 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:25:26 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:21:23 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 95.13%
+Acc: 95.80%
         | Pred real | Pred fake |
-GT real | 2854      | 146        |
+GT real | 2874      | 126        |
 GT fake | 0         | 0          |
 
 
 === Real images ===
-Acc: 95.13%
+Acc: 95.80%
         | Pred real | Pred fake |
-GT real | 2854      | 146        |
+GT real | 2874      | 126        |
 GT fake | 0         | 0          |
 
 
@@ -65,16 +65,16 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 94.80%
+Acc: 95.37%
         | Pred real | Pred fake |
-GT real | 2844      | 156        |
+GT real | 2861      | 139        |
 GT fake | 0         | 0          |
 
 
 === Real images (Comb) ===
-Acc: 94.80%
+Acc: 95.37%
         | Pred real | Pred fake |
-GT real | 2844      | 156        |
+GT real | 2861      | 139        |
 GT fake | 0         | 0          |
 
 
@@ -85,8 +85,8 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:34:25 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:27:29 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv
 [Question]  : Is this photo real?
 
@@ -118,22 +118,22 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:38:41 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:31:55 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Flickr_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 86.23%
+Acc: 89.57%
         | Pred real | Pred fake |
-GT real | 2587      | 413        |
+GT real | 2687      | 313        |
 GT fake | 0         | 0          |
 
 
 === Real images ===
-Acc: 86.23%
+Acc: 89.57%
         | Pred real | Pred fake |
-GT real | 2587      | 413        |
+GT real | 2687      | 313        |
 GT fake | 0         | 0          |
 
 
@@ -152,16 +152,16 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 86.20%
+Acc: 89.43%
         | Pred real | Pred fake |
-GT real | 2586      | 414        |
+GT real | 2683      | 317        |
 GT fake | 0         | 0          |
 
 
 === Real images (Comb) ===
-Acc: 86.20%
+Acc: 89.43%
         | Pred real | Pred fake |
-GT real | 2586      | 414        |
+GT real | 2683      | 317        |
 GT fake | 0         | 0          |
 
 
@@ -172,8 +172,8 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:44:27 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:40:07 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv
 [Question]  : Is this photo real?
 
@@ -205,16 +205,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:49:06 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 01:44:39 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SD2_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 95.80%
+Acc: 97.27%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 126       | 2874       |
+GT fake | 82        | 2918       |
 
 
 === Real images ===
@@ -225,10 +225,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 95.80%
+Acc: 97.27%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 126       | 2874       |
+GT fake | 82        | 2918       |
 
 
 === Uncommon fake images ===
@@ -239,10 +239,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 95.80%
+Acc: 97.27%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 126       | 2874       |
+GT fake | 82        | 2918       |
 
 
 === Real images (Comb) ===
@@ -253,14 +253,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 95.80%
+Acc: 97.27%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 126       | 2874       |
+GT fake | 82        | 2918       |
 
 
-[TIME]      : Fri Sep 22 02:53:07 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:08:30 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv
 [Question]  : Is this photo real?
 
@@ -292,16 +292,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 02:57:37 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:13:04 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SDXL_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 93.60%
+Acc: 96.47%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 192       | 2808       |
+GT fake | 106       | 2894       |
 
 
 === Real images ===
@@ -312,10 +312,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 93.60%
+Acc: 96.47%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 192       | 2808       |
+GT fake | 106       | 2894       |
 
 
 === Uncommon fake images ===
@@ -326,10 +326,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 93.60%
+Acc: 96.47%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 192       | 2808       |
+GT fake | 106       | 2894       |
 
 
 === Real images (Comb) ===
@@ -340,14 +340,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 93.60%
+Acc: 96.47%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 192       | 2808       |
+GT fake | 106       | 2894       |
 
 
-[TIME]      : Fri Sep 22 03:01:39 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:35:25 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_IF_label.csv
 [Question]  : Is this photo real?
 
@@ -379,16 +379,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:06:12 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:39:52 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_IF_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 87.33%
+Acc: 88.77%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 380       | 2620       |
+GT fake | 337       | 2663       |
 
 
 === Real images ===
@@ -399,10 +399,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 87.33%
+Acc: 88.77%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 380       | 2620       |
+GT fake | 337       | 2663       |
 
 
 === Uncommon fake images ===
@@ -413,10 +413,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 87.33%
+Acc: 88.77%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 380       | 2620       |
+GT fake | 337       | 2663       |
 
 
 === Real images (Comb) ===
@@ -427,14 +427,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 87.33%
+Acc: 88.77%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 380       | 2620       |
+GT fake | 337       | 2663       |
 
 
-[TIME]      : Fri Sep 22 03:10:30 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:46:46 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv
 [Question]  : Is this photo real?
 
@@ -466,16 +466,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:15:07 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 02:51:18 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_DALLE_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 99.17%
+Acc: 97.90%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 25        | 2975       |
+GT fake | 63        | 2937       |
 
 
 === Real images ===
@@ -486,10 +486,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 99.17%
+Acc: 97.90%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 25        | 2975       |
+GT fake | 63        | 2937       |
 
 
 === Uncommon fake images ===
@@ -500,10 +500,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 99.17%
+Acc: 97.90%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 25        | 2975       |
+GT fake | 63        | 2937       |
 
 
 === Real images (Comb) ===
@@ -514,14 +514,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 99.17%
+Acc: 97.90%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 25        | 2975       |
+GT fake | 63        | 2937       |
 
 
-[TIME]      : Fri Sep 22 03:19:15 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:06:54 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv
 [Question]  : Is this photo real?
 
@@ -553,16 +553,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:23:51 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:11:21 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_SGXL_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 98.37%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 49        | 2951       |
+GT fake | 4         | 2996       |
 
 
 === Real images ===
@@ -573,10 +573,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 98.37%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 49        | 2951       |
+GT fake | 4         | 2996       |
 
 
 === Uncommon fake images ===
@@ -587,10 +587,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 98.37%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 49        | 2951       |
+GT fake | 4         | 2996       |
 
 
 === Real images (Comb) ===
@@ -601,14 +601,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 98.37%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 49        | 2951       |
+GT fake | 4         | 2996       |
 
 
-[TIME]      : Fri Sep 22 03:27:58 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:20:46 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Control_COCO_label.csv
 [Question]  : Is this photo real?
 
@@ -640,16 +640,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:32:34 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:25:20 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Control_COCO_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 86.50%
+Acc: 89.43%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 405       | 2595       |
+GT fake | 317       | 2683       |
 
 
 === Real images ===
@@ -660,10 +660,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 86.50%
+Acc: 89.43%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 405       | 2595       |
+GT fake | 317       | 2683       |
 
 
 === Uncommon fake images ===
@@ -674,10 +674,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 86.63%
+Acc: 89.50%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 401       | 2599       |
+GT fake | 315       | 2685       |
 
 
 === Real images (Comb) ===
@@ -688,14 +688,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 86.63%
+Acc: 89.50%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 401       | 2599       |
+GT fake | 315       | 2685       |
 
 
-[TIME]      : Fri Sep 22 03:36:45 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:30:14 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lama_label.csv
 [Question]  : Is this photo real?
 
@@ -727,16 +727,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:41:14 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:34:35 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lama_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 33.40%
+Acc: 40.33%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 1998      | 1002       |
+GT fake | 1790      | 1210       |
 
 
 === Real images ===
@@ -747,10 +747,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 33.40%
+Acc: 40.33%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 1998      | 1002       |
+GT fake | 1790      | 1210       |
 
 
 === Uncommon fake images ===
@@ -761,10 +761,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 33.77%
+Acc: 40.57%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 1987      | 1013       |
+GT fake | 1783      | 1217       |
 
 
 === Real images (Comb) ===
@@ -775,14 +775,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 33.77%
+Acc: 40.57%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 1987      | 1013       |
+GT fake | 1783      | 1217       |
 
 
-[TIME]      : Fri Sep 22 03:45:21 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:38:52 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2IP_label.csv
 [Question]  : Is this photo real?
 
@@ -814,16 +814,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:49:51 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:43:17 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2IP_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 78.63%
+Acc: 84.67%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 641       | 2359       |
+GT fake | 460       | 2540       |
 
 
 === Real images ===
@@ -834,10 +834,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 78.63%
+Acc: 84.67%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 641       | 2359       |
+GT fake | 460       | 2540       |
 
 
 === Uncommon fake images ===
@@ -848,10 +848,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 78.63%
+Acc: 84.67%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 641       | 2359       |
+GT fake | 460       | 2540       |
 
 
 === Real images (Comb) ===
@@ -862,14 +862,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 78.63%
+Acc: 84.67%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 641       | 2359       |
+GT fake | 460       | 2540       |
 
 
-[TIME]      : Fri Sep 22 03:54:11 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:47:45 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lte_label.csv
 [Question]  : Is this photo real?
 
@@ -901,10 +901,10 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 03:58:49 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:52:06 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_lte_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
 Acc: 99.97%
@@ -955,8 +955,8 @@ GT real | 0         | 0          |
 GT fake | 1         | 2999       |
 
 
-[TIME]      : Fri Sep 22 04:03:00 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 03:56:22 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2SR_label.csv
 [Question]  : Is this photo real?
 
@@ -988,16 +988,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 04:07:39 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:00:50 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_SD2SR_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 99.70%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 9         | 2991       |
+GT fake | 4         | 2996       |
 
 
 === Real images ===
@@ -1008,10 +1008,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 99.70%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 9         | 2991       |
+GT fake | 4         | 2996       |
 
 
 === Uncommon fake images ===
@@ -1022,10 +1022,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 99.70%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 9         | 2991       |
+GT fake | 4         | 2996       |
 
 
 === Real images (Comb) ===
@@ -1036,14 +1036,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 99.70%
+Acc: 99.87%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 9         | 2991       |
+GT fake | 4         | 2996       |
 
 
-[TIME]      : Fri Sep 22 04:11:38 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:05:01 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_label.csv
 [Question]  : Is this photo real?
 
@@ -1075,16 +1075,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 04:16:25 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:09:29 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 69.33%
+Acc: 45.20%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 920       | 2080       |
+GT fake | 1644      | 1356       |
 
 
 === Real images ===
@@ -1095,10 +1095,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 69.33%
+Acc: 45.20%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 920       | 2080       |
+GT fake | 1644      | 1356       |
 
 
 === Uncommon fake images ===
@@ -1109,10 +1109,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 69.33%
+Acc: 45.20%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 920       | 2080       |
+GT fake | 1644      | 1356       |
 
 
 === Real images (Comb) ===
@@ -1123,14 +1123,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 69.33%
+Acc: 45.20%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 920       | 2080       |
+GT fake | 1644      | 1356       |
 
 
-[TIME]      : Fri Sep 22 04:20:30 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:13:42 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_AdvAtk_Imagenet_label.csv
 [Question]  : Is this photo real?
 
@@ -1162,16 +1162,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 04:25:08 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:18:12 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_AdvAtk_Imagenet_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 90.43%
+Acc: 93.53%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 287       | 2713       |
+GT fake | 194       | 2806       |
 
 
 === Real images ===
@@ -1182,10 +1182,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 90.43%
+Acc: 93.53%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 287       | 2713       |
+GT fake | 194       | 2806       |
 
 
 === Uncommon fake images ===
@@ -1196,10 +1196,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 90.43%
+Acc: 93.53%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 287       | 2713       |
+GT fake | 194       | 2806       |
 
 
 === Real images (Comb) ===
@@ -1210,14 +1210,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 90.43%
+Acc: 93.53%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 287       | 2713       |
+GT fake | 194       | 2806       |
 
 
-[TIME]      : Fri Sep 22 04:29:11 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:22:24 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Backdoor_Imagenet_label.csv
 [Question]  : Is this photo real?
 
@@ -1249,16 +1249,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 04:33:42 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:27:01 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_Backdoor_Imagenet_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 86.00%
+Acc: 93.13%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 420       | 2580       |
+GT fake | 206       | 2794       |
 
 
 === Real images ===
@@ -1269,10 +1269,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 86.00%
+Acc: 93.13%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 420       | 2580       |
+GT fake | 206       | 2794       |
 
 
 === Uncommon fake images ===
@@ -1283,10 +1283,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 86.00%
+Acc: 93.13%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 420       | 2580       |
+GT fake | 206       | 2794       |
 
 
 === Real images (Comb) ===
@@ -1297,14 +1297,14 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 86.00%
+Acc: 93.13%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 420       | 2580       |
+GT fake | 206       | 2794       |
 
 
-[TIME]      : Fri Sep 22 04:37:58 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:31:27 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_DataPoison_Imagenet_label.csv
 [Question]  : Is this photo real?
 
@@ -1336,16 +1336,16 @@ GT real | 0         | 0          |
 GT fake | 0         | 0          |
 
 
-[TIME]      : Fri Sep 22 04:42:28 2023
-[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth
+[TIME]      : Fri Sep 22 04:36:00 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
 [Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_DataPoison_Imagenet_label.csv
-[Question]  : Is this photo [*]?
+[Question]  : [*] Is this photo real?
 
 === Overall ===
-Acc: 86.63%
+Acc: 87.43%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 401       | 2599       |
+GT fake | 377       | 2623       |
 
 
 === Real images ===
@@ -1356,10 +1356,10 @@ GT fake | 0         | 0          |
 
 
 === Common fake images ===
-Acc: 86.63%
+Acc: 87.43%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 401       | 2599       |
+GT fake | 377       | 2623       |
 
 
 === Uncommon fake images ===
@@ -1370,10 +1370,10 @@ GT fake | 0         | 0          |
 
 
 === Overall (Comb) ===
-Acc: 86.70%
+Acc: 87.83%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 399       | 2601       |
+GT fake | 365       | 2635       |
 
 
 === Real images (Comb) ===
@@ -1384,9 +1384,96 @@ GT fake | 0         | 0          |
 
 
 === Common fake images (Comb) ===
-Acc: 86.70%
+Acc: 87.83%
         | Pred real | Pred fake |
 GT real | 0         | 0          |
-GT fake | 399       | 2601       |
+GT fake | 365       | 2635       |
+
+
+[TIME]      : Sun Sep 24 01:17:10 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
+[Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_faceOnly_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 13.83%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 2585      | 415        |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 13.83%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 2585      | 415        |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Sun Sep 24 01:21:26 2023
+[Finetuned] : /home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth
+[Data csv]  : /eva_data0/iammingggg/textual_inversion/60k_6k_6k/test_deeperforensics_faceOnly_label.csv
+[Question]  : [*] Is this photo real?
+
+=== Overall ===
+Acc: 94.17%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 175       | 2825       |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 94.17%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 175       | 2825       |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Overall (Comb) ===
+Acc: 94.20%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 174       | 2826       |
+
+
+=== Real images (Comb) ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images (Comb) ===
+Acc: 94.20%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 174       | 2826       |
 
 
