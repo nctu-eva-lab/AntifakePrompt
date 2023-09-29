@@ -1,7 +1,5 @@
 # AntifakePrompt
 
-We 
-
 ## Preparing Dataset
 
 1. Go to **`LAVIS/utils/gen_path_label.sh`**, you will see the code below:
