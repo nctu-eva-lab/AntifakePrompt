@@ -1,8 +1,10 @@
 # AntifakePrompt
 
+We 
+
 ## Preparing Dataset
 
-1. Go to `LAVIS/utils/gen_path_label.sh`, you will see the code below:
+1. Go to **`LAVIS/utils/gen_path_label.sh`**, you will see the code below:
 
 ```python=
 real_dir=""
@@ -26,9 +28,9 @@ sh LAVIS/utils/gen_path_label.sh
 
 ## Testing
 
-1. Go to `LAVIS/lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml`, check the key value of `finetune` (it should be the checkpoint of prompt-tuned model).
+1. Go to **`LAVIS/lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml`**, check the key value of `finetune` (it should be the checkpoint of prompt-tuned model).
 
-2. Go to `LAVIS/deepfake-detection/test.sh`, you will see the code below:
+2. Go to **`LAVIS/deepfake-detection/test.sh`**, you will see the code below:
 ```python=
 export CUDA_VISIBLE_DEVICES=1
 
@@ -49,7 +51,7 @@ sh LAVIS/deepfake-detection/test.sh
 
 ## Training
 
-1. Go to `LAVIS/lavis/configs/datasets/textinv/textinv.yaml`, set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
+1. Go to **`LAVIS/lavis/configs/datasets/textinv/textinv.yaml`**, set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
 2. Run the command below:
 
 ```shell=
@@ -57,3 +59,6 @@ sh LAVIS/run_scripts/textual-inversion/train.sh
 ```
 
 ## Checkpoint
+
+- Checkpoints can be downloaded [here](https://drive.google.com/drive/folders/1JgMJie4wDt7dNeHkT25VVuzG9CdnA9mQ?usp=drive_link).
+- Dataset can be downloaded [here](https://drive.google.com/drive/folders/1qVolr_iYy7vZ5SjZBengZ3pncUYLoXBt?usp=drive_link).
