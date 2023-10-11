@@ -74,4 +74,4 @@ This part list the key parameters for training.
 | run: max_epoch                                             | The number of training epochs.                                                                                       |
 | run: batch_size_train/eval                                 | The batch size for training/evaluation.                                                                              |
 
- Please refer to the original [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) repo for the other parameters that not listed above.
+ Please refer to the original [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) repo for the other parameters that are not listed above.
