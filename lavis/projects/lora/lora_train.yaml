@@ -16,7 +16,7 @@ model:
   prompt: "Is this photo real?"
   pseudo_word: "[*]"
 
-  lora_on_Qformer: True
+  lora_on_Qformer: False
   lora_on_LLM: True
   lora_inference_mode: False
 

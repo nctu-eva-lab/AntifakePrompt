@@ -818,8 +818,8 @@ class Blip2VicunaInstructLoRA(Blip2Base):
             model.load_from_pretrained(cfg.get("pretrained")) # Load those pretrained weights (from original instBLIP)
             model.load_from_pretrained(cfg.get("finetuned")) # Load those trained weights (new embeddings)
         
-        for name, param in model.named_parameters():
-            if param.requires_grad:
-                print(name)
+        # for name, param in model.named_parameters():
+        #     if param.requires_grad:
+        #         print(name)
 
         return model

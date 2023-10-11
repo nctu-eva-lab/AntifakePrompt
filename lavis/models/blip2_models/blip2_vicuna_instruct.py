@@ -411,6 +411,7 @@ class Blip2VicunaInstruct(Blip2Base):
                         this_choices = [f"({string.ascii_lowercase[j]}) {ch}" for j, ch in enumerate(samples["choices"][i])]
                         this_choices = " ".join(this_choices)
                         text_input.append(prompt.format(samples["text_input"][i], this_choices))
+                    print(text_input)
             else:
                 text_input = [prompt.format(question) for question in samples["text_input"]]
         else:
