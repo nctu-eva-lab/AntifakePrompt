@@ -19,7 +19,7 @@ AntifakePrompt uses frozen Vicuna 7B models. Please first follow the [instructio
 
 Following the steps below, you will get a **.csv file** containing all the image paths and corresponding label for training and testing.
 
-1. Go to [Path and Label Generator](utils/gen_path_label.sh), modify the parameters below:
+1. Go to [Path and Label Generator Bash](utils/gen_path_label.sh), modify the parameters below:
 
 - `real_dir` / `fake_dir` : the directory to your real / fake images.
 - `real_label` / `fake_label` : the ground truth label for real / fake images.
@@ -34,7 +34,7 @@ sh LAVIS/utils/gen_path_label.sh
 ## Testing
 
 1. Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model.
-2. Go to [Test bash](deepfake-detection/test.sh), modify the parameters below:
+2. Go to [Test Bash](deepfake-detection/test.sh), modify the parameters below:
 
 - `question` : the question prompt fed into the model.
 - `data_csv` : the csv file you just generated from [Preparing Dataset](##Preparing-Dataset).
