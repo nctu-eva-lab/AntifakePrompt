@@ -14,7 +14,6 @@ model:
   freeze_vit: True
 
   prompt: "Is this photo real [*]?"
-  # prompt: "Is this photo [*]?"
   pseudo_word: "[*]"
   # init_word: "real"
 
