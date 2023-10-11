@@ -13,13 +13,13 @@ pip install -e .
 ```
 
 ## Prepare Vicuna Weights
-AntifakePrompt uses frozen Vicuna 7B models. Please first follow the [instructions](https://github.com/lm-sys/FastChat) to prepare Vicuna v1.3 weights. Then modify the `llm_model` in the [Model Config](LAVIS/lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) to the folder that contains Vicuna weights.
+AntifakePrompt uses frozen Vicuna 7B models. Please first follow the [instructions](https://github.com/lm-sys/FastChat) to prepare Vicuna v1.3 weights. Then modify the `llm_model` in the [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) to the folder that contains Vicuna weights.
 
 ## Prepare Dataset
 
 Following the steps below, you will get a **.csv file** containing all the image paths and corresponding label for training and testing.
 
-1. Go to [Path and Label Generator](LAVIS/utils/gen_path_label.sh), modify the parameters below:
+1. Go to [Path and Label Generator](utils/gen_path_label.sh), modify the parameters below:
 
 - `real_dir` / `fake_dir` : the directory to your real / fake images.
 - `real_label` / `fake_label` : the ground truth label for real / fake images.
@@ -33,8 +33,8 @@ sh LAVIS/utils/gen_path_label.sh
 
 ## Testing
 
-1. Go to [Model Config](LAVIS/lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model.
-2. Go to [Test bash](LAVIS/deepfake-detection/test.sh), modify the parameters below:
+1. Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model.
+2. Go to [Test bash](deepfake-detection/test.sh), modify the parameters below:
 
 - `question` : the question prompt fed into the model.
 - `data_csv` : the csv file you just generated from [Preparing Dataset](##Preparing-Dataset).
@@ -47,8 +47,8 @@ sh LAVIS/deepfake-detection/test.sh
 
 ## Training
 
-1. Go to [Dataset Config](LAVIS/lavis/configs/datasets/textinv/textinv.yaml), set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
-2. Go to [Training Config](LAVIS/lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. (Please refer to [Training parameters](##Training-parameters) for detail description)
+1. Go to [Dataset Config](lavis/configs/datasets/textinv/textinv.yaml), set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
+2. Go to [Training Config](lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. (Please refer to [Training parameters](##Training-parameters) for detail description)
 3. Run the command to start training:
 
 ```
