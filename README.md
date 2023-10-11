@@ -1,4 +1,8 @@
-# AntifakePrompt
+# AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors
+
+This is the official implementation of AntifakePrompt paper. AntifakePrompt propose a prompt-tuned vision-language model from [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) as a deepfake detector.
+
+![model structure](docs/antifakeprompt.png)
 
 ## Preparing Dataset
 
@@ -59,4 +63,3 @@ sh LAVIS/run_scripts/textual-inversion/train.sh
 ## Checkpoint
 
 - Checkpoints can be downloaded [here](https://drive.google.com/drive/folders/1JgMJie4wDt7dNeHkT25VVuzG9CdnA9mQ?usp=drive_link).
-- Dataset can be downloaded [here](https://drive.google.com/drive/folders/1qVolr_iYy7vZ5SjZBengZ3pncUYLoXBt?usp=drive_link).
