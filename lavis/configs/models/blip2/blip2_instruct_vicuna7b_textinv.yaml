@@ -9,29 +9,8 @@ model:
   load_pretrained: True
 
   pretrained: "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/InstructBLIP/instruct_blip_vicuna7b_trimmed.pth"
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901120/checkpoint_best.pth" # SD2
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901121/checkpoint_best.pth" # SDXL
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230901122/checkpoint_best.pth" # IF
-  # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230911185/checkpoint_best.pth" # SD2+IP(imbalance)
-  # finetuned: "/home/iammingggg/detection/LAVIS/lavis/output/BLIP2/Textual_inv/20230912013/checkpoint_best.pth" # SD2+IP(balance)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919125/checkpoint_best.pth" # SD2+IP (balance, prefix)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230919023/checkpoint_best.pth" # SD2+IP (balance, replace)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_60k_SD2_SD2IP.pth" # SD2+IP (60k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_120k_SD2_SD2IP.pth" # SD2+IP (120k, postfix)
   finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth" # SD2+IP (90k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP_lama.pth" # SD2+IP+Lama (90k, postfix)
-
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921180/checkpoint_best.pth" # SD2+IP (90k, prefix)
-  # finetuned: "/home/denny/LAVIS/lavis/output/BLIP2/Textual_inv/20230921181/checkpoint_best.pth" # SD2+IP (90k, replace)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_9k_SD2_SD2IP.pth" # SD2+IP (9k, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_900_SD2_SD2IP.pth" # SD2+IP (900, postfix)
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90_SD2_SD2IP.pth" # SD2+IP (90, postfix)
-
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_SD2_SD2IP_imbalance.pth" # SD2+IP (30k, postfix)
   
-
   # vit encoder
   image_size: 224
   drop_path_rate: 0
@@ -58,51 +37,13 @@ preprocess:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          # # COCO (30k) + SD2 + SD2IP 
-          # mean: [0.4750, 0.4520, 0.4165]
-          # std: [0.2778, 0.2697, 0.2864]
-          # # COCO (60k) + SD2 + SD2IP 
-          # mean: [0.4739, 0.4508, 0.4143]
-          # std: [0.2778, 0.2706, 0.2868]
-          # COCO (90k) + SD2 + SD2IP 
           mean: [0.4730, 0.4499, 0.4129]
           std: [0.2780, 0.2713, 0.2872]
-          # # COCO (120k) + SD2 + SD2IP 
-          # mean: [0.4723, 0.4492, 0.4119]
-          # std: [0.2781, 0.2717, 0.2874]
-          # # COCO (9k) + SD2 + SD2IP 
-          # mean: [0.4728, 0.4518, 0.4146]
-          # std: [0.2778, 0.2709, 0.2870]
-          # # COCO (900) + SD2 + SD2IP 
-          # mean: [0.4711, 0.4528, 0.4147]
-          # std: [0.2756, 0.2690, 0.2872]
-          # # COCO (90) + SD2 + SD2IP 
-          # mean: [0.4860, 0.4659, 0.4203]
-          # std: [0.2713, 0.2658, 0.2806]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
-          # # COCO (30k) + SD2 + SD2IP 
-          # mean: [0.4750, 0.4520, 0.4165]
-          # std: [0.2778, 0.2697, 0.2864]
-          # # COCO (60k) + SD2 + SD2IP 
-          # mean: [0.4739, 0.4508, 0.4143]
-          # std: [0.2778, 0.2706, 0.2868]
-          # COCO (90k) + SD2 + SD2IP 
           mean: [0.4730, 0.4499, 0.4129]
           std: [0.2780, 0.2713, 0.2872]
-          # # COCO (120k) + SD2 + SD2IP 
-          # mean: [0.4723, 0.4492, 0.4119]
-          # std: [0.2781, 0.2717, 0.2874]
-          # # COCO (9k) + SD2 + SD2IP 
-          # mean: [0.4728, 0.4518, 0.4146]
-          # std: [0.2778, 0.2709, 0.2870]
-          # # COCO (900) + SD2 + SD2IP 
-          # mean: [0.4711, 0.4528, 0.4147]
-          # std: [0.2756, 0.2690, 0.2872]
-          # # COCO (90) + SD2 + SD2IP 
-          # mean: [0.4860, 0.4659, 0.4203]
-          # std: [0.2713, 0.2658, 0.2806]
     text_processor:
         train:
           name: "blip_question_textinv"
