@@ -3,6 +3,7 @@
 This is the official implementation of AntifakePrompt [paper]. AntifakePrompt propose a prompt-tuned vision-language model from [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) as a deepfake detector.
 
 ![model structure](docs/antifakeprompt.png | width=200)
+<img src="docs/antifakeprompt.png" width="300">
 
 ## Installation
 
