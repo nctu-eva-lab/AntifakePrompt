@@ -1,6 +1,10 @@
 # AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors
 
-This is the official implementation of AntifakePrompt [paper]. AntifakePrompt propose a prompt-tuned vision-language model from [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) as a deepfake detector.
+This is the official implementation of AntifakePrompt [paper].
+
+## Introduction
+
+In this paper, being inspired by the zero-shot advantages of Vision-Language Models (VLMs), we propose **AntifakePrompt**, a novel approach using VLMs (e.g. InstructBLIP) and prompt tuning techniques to improve the deepfake detection accuracy over unseen data. We formulate deepfake detection as a visual question answering problem, and tune soft prompts for InstructBLIP to answer the real/fake information of a query image. We conduct full-spectrum experiments on datasets from 3 held-in and 13 held-out generative models, covering modern text-to-image generation, image editing and image attacks. Results demonstrate that (1) the deepfake detection accuracy can be significantly and consistently improved (from 58.8\% to 91.31\%, in average accuracy over unseen data) using pretrained vision-language models with prompt tuning; (2) our superior performance is at less cost of trainable parameters, resulting in an effective and efficient solution for deepfake detection.
 
 <p align="center">
 <img src="docs/antifakeprompt.png" width="600">
@@ -94,7 +98,7 @@ sh LAVIS/run_scripts/textual-inversion/train.sh
 
 This part list the key parameters for training.
 | **Parameter name**                                         | **Description**                                                                                                      |
-|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+|:---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | model: prompt                                              | The question prompt for training (including pseudo word).                                                            |
 | model: pseudo_word                                         | The word which is the optimization target, so it should be in the question prompt.                                   |
 | model: init_word                                           | The intializing word for the pseudo word embedding. (If not specified, the pseudo word will be randomly initailized) |
@@ -106,3 +110,12 @@ This part list the key parameters for training.
 | run: batch_size_train/eval                                 | The batch size for training/evaluation.                                                                              |
 
  Please refer to the original [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) repo for the other parameters that are not listed above.
+ 
+ ## Citation
+ 
+ 
+ ## Acknowledgement
+
+This project is built upon the gaint sholders of InstructBLIP. Great thanks to them!
+
+InstructBLIP: https://github.com/salesforce/LAVIS/tree/main/projects/instructblip
