@@ -116,6 +116,6 @@ This part list the key parameters for training.
  
  ## Acknowledgement
 
-This project is built upon the gaint sholders of InstructBLIP. Great thanks to them!
+This project is built upon the giant sholders of InstructBLIP. Great thanks to them!
 
 InstructBLIP: https://github.com/salesforce/LAVIS/tree/main/projects/instructblip
