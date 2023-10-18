@@ -1829,3 +1829,619 @@ GT real | 0         | 0          |
 GT fake | 0         | 50         |
 
 
+[TIME]      : Sun Oct 15 15:34:46 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 50.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 0.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[TIME]      : Sun Oct 15 15:35:09 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 50.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 0.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[TIME]      : Sun Oct 15 15:35:59 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 50.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 0.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[TIME]      : Sun Oct 15 15:36:10 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/debug_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 50.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 100        |
+
+
+=== Real images ===
+Acc: 0.00%
+        | Pred real | Pred fake |
+GT real | 0         | 100        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+=== Uncommon fake images ===
+Acc: 100.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 50         |
+
+
+[TIME]      : Sun Oct 15 15:42:15 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.90%
+        | Pred real | Pred fake |
+GT real | 2967      | 33         |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.90%
+        | Pred real | Pred fake |
+GT real | 2967      | 33         |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Sun Oct 15 15:44:43 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 95.40%
+        | Pred real | Pred fake |
+GT real | 2862      | 138        |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 95.40%
+        | Pred real | Pred fake |
+GT real | 2862      | 138        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Sun Oct 15 20:08:53 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.90%
+        | Pred real | Pred fake |
+GT real | 2967      | 33         |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.90%
+        | Pred real | Pred fake |
+GT real | 2967      | 33         |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Sun Oct 15 20:11:21 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Data csv]  : /eva_data0/denny/textual_inversion/60k_6k_6k/test_COCO_label.csv
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 95.40%
+        | Pred real | Pred fake |
+GT real | 2862      | 138        |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 95.40%
+        | Pred real | Pred fake |
+GT real | 2862      | 138        |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Mon Oct 16 21:35:09 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/', '/eva_data0/denny/textual_inversion/debug/1_fake/']
+[Labels]    : [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 76.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 46        | 54         |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Mon Oct 16 21:35:17 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/', '/eva_data0/denny/textual_inversion/debug/1_fake/']
+[Labels]    : [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 97        | 3          |
+GT fake | 1         | 99         |
+
+
+=== Real images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Uncommon fake images ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+[TIME]      : Mon Oct 16 21:41:05 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/', '/eva_data0/denny/textual_inversion/debug/1_fake/']
+[Labels]    : [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 76.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 46        | 54         |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Fake images ===
+Acc: 54.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 46        | 54         |
+
+
+[TIME]      : Mon Oct 16 21:52:20 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:15:32 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:21:44 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:23:28 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:23:32 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:23:59 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:24:04 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:24:32 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:24:37 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:24:54 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+
+[TIME]      : Tue Oct 17 11:24:59 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/denny/textual_inversion/debug/0_real/']
+[Labels]    : ['yes']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== Real images ===
+Acc: 98.00%
+        | Pred real | Pred fake |
+GT real | 98        | 2          |
+GT fake | 0         | 0          |
+
+
+=== No fake images ===
+

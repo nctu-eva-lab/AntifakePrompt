@@ -154,3 +154,5 @@ debug*/
 *.gz
 
 cache/
+
+deepfake-detection/log/*

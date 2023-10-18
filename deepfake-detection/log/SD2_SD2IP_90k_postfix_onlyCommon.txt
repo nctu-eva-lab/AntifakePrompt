@@ -85,3 +85,112 @@ GT real | 0         | 0          |
 GT fake | 63        | 2937       |
 
 
+[TIME]      : Tue Oct 17 21:35:14 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test/1_fake/SDXLInpaint/SDXLInpainted_binaryMask']
+[Labels]    : ['no']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 5.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 95        | 5          |
+
+
+=== No real images ===
+
+=== Fake images ===
+Acc: 5.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 95        | 5          |
+
+
+[TIME]      : Tue Oct 17 21:35:19 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test/1_fake/SDXLInpaint/SDXLInpainted_binaryMask']
+[Labels]    : ['no']
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
+=== No real images ===
+
+=== Fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
+[TIME]      : Tue Oct 17 21:45:04 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test/1_fake/SDXLInpaint/SDXLInpainted_binaryMask']
+[Labels]    : ['no']
+[Question]  : Is this photo real?
+
+=== Overall ===
+Acc: 5.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 95        | 5          |
+
+
+=== No real images ===
+
+=== Fake images ===
+Acc: 5.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 95        | 5          |
+
+
+[TIME]      : Tue Oct 17 21:45:08 2023
+[Finetuned] : /home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth
+[Img roots] : ['/eva_data0/iammingggg/textual_inversion/60k_6k_6k/test/1_fake/SDXLInpaint/SDXLInpainted_binaryMask']
+[Labels]    : ['no']
+[Question]  : Is this photo real [*]?
+
+=== Overall ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
+=== No real images ===
+
+=== Fake images ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
+=== Overall (Comb) ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
+=== Real images (Comb) ===
+Acc: nan%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 0         | 0          |
+
+
+=== Common fake images (Comb) ===
+Acc: 42.00%
+        | Pred real | Pred fake |
+GT real | 0         | 0          |
+GT fake | 58        | 42         |
+
+
