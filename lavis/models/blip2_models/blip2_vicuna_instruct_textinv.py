@@ -189,7 +189,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         
         # Add pseudo-word as new token
         n_added_tokens = self.tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
-        print(f'Added {n_added_tokens} tokens to Qformer tokenizer.')
+        #print(f'Added {n_added_tokens} tokens to Qformer tokenizer.')
         assert n_added_tokens > 0, f'The pseudo-word `{pseudo_word}` has been used in vocabulary, please try another one.'
         
         # Initialize the pseudo-word embedding with the embedding of initial-word
@@ -202,7 +202,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
                 
         # Add new token to LLM tokenizer
         n_added_tokens = self.llm_tokenizer.add_special_tokens({'additional_special_tokens': [pseudo_word]})
-        print(f'Added {n_added_tokens} tokens to llm tokenizer.')
+        #print(f'Added {n_added_tokens} tokens to llm tokenizer.')
         assert n_added_tokens > 0, f'The pseudo-word `{pseudo_word}` has been used in vocabulary, please try another one.'
 
         # Initialize the new embedding with the embedding of initial-word
@@ -728,7 +728,8 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         # self.llm_tokenizer.padding_side = "right"
         self.llm_tokenizer.truncation_side = 'right'
         n_cands = len(candidates)
-        with self.maybe_autocast(dtype=torch.bfloat16):
+        # with self.maybe_autocast(dtype=torch.bfloat16):
+        with self.maybe_autocast():
             all_losses = []
             for n in range(n_segments):
                 seg_len = n_cands // n_segments
@@ -764,7 +765,27 @@ class Blip2VicunaInstructTextinv(Blip2Base):
                 # this_llm_input_ids = torch.cat([this_input_tokens_ids, this_output_tokens_ids], dim=1)
                 # this_llm_atts = torch.cat([this_input_tokens_atts, this_output_tokens_atts], dim=1)
 
-                inputs_embeds = self.llm_model.get_input_embeddings()(this_llm_input_ids)
+                # inputs_embeds = self.llm_model.get_input_embeddings()(this_llm_input_ids)
+                # NOTE: This is the process that turn the sentence containing the pseudo-word into embeddigns
+                # NOTE: The tokenizer length is less than original embedding size by 1 (which is the token of pseudo-word),
+                # NOTE: so if the `token_id` is greater than the size of original embedding, the word is pseudo-word
+                
+                vocab_size = self.llm_model.get_input_embeddings().num_embeddings
+                input_ids = this_llm_tokens['input_ids']
+                train_word_mask = (input_ids >= vocab_size)
+                
+                pretrained_input_ids = input_ids.clone()
+                pretrained_input_ids[train_word_mask] = 0 # input_id of pseudo_wrod set to 0
+                inputs_embeds = self.llm_model.get_input_embeddings()(pretrained_input_ids)
+                
+                input_ids = input_ids - vocab_size
+                input_ids[~train_word_mask] = 0
+                train_inputs_embeds = self.llm_model.model.train_embed_tokens(input_ids)
+                
+                inputs_embeds[train_word_mask] = train_inputs_embeds[train_word_mask]
+                
+                # NOTE: Below is the same
+                
                 inputs_embeds = torch.cat([inputs_llm.repeat_interleave(seg_len, dim=0), inputs_embeds], dim=1)
                 attention_mask = torch.cat([atts_llm.repeat_interleave(seg_len, dim=0), this_llm_atts], dim=1)
 
@@ -892,8 +913,8 @@ class Blip2VicunaInstructTextinv(Blip2Base):
             model.load_from_pretrained(cfg.get("pretrained")) # Load those pretrained weights (from original instBLIP)
             model.load_from_pretrained(cfg.get("finetuned")) # Load those trained weights (new embeddings)
             
-        for name, param in model.named_parameters():
-            if(param.requires_grad):
-                print(name, param.requires_grad)
+        # for name, param in model.named_parameters():
+        #     if(param.requires_grad):
+        #         print(name, param.requires_grad)
         
         return model
