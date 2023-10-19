@@ -50,7 +50,7 @@ The downloaded checkpoints will be saved in `LAVIS/ckpt`.
 ## Testing
 
 ### Set the checkpoint path
-Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model (downloaded in [Checkpoints downloading](###Checkpoints-downloading)).
+Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model (downloaded in [Checkpoints downloading](###checkpoints-downloading)).
 
 ### Classify a single image
 
