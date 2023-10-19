@@ -1,6 +1,7 @@
 # ignore logs
 log/
 prediction/
+log*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
