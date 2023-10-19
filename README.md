@@ -15,8 +15,8 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 ### Construct the environment
 
 ```
-git clone https://github.com/thisismingggg/LAVIS.git
-cd LAVIS
+git clone https://github.com/thisismingggg/AntifakePrompt.git
+cd AntifakePrompt
 pip install -e .
 ```
 
@@ -50,7 +50,7 @@ The downloaded checkpoints will be saved in `LAVIS/ckpt`.
 ## Testing
 
 ### Set the checkpoint path
-Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model (downloaded in [Checkpoints downloading](#checkpoints-downloading)).
+Go to [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) and set the key value of `model: finetune` to the checkpoint of prompt-tuned model (downloaded in [Checkpoints download](###Checkpoints-download)).
 
 ### Classify a single image
 
@@ -87,7 +87,7 @@ python gen_path_label.py --real_dir <real_image_directory> --fake_dir <fake_imag
 4. Go to [Dataset Config](lavis/configs/datasets/textinv/textinv.yaml), set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
 
 ### Start training
-1. Go to [Training Config](lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. (Please refer to [Training parameters](#training-parameters) for detail description)
+1. Go to [Training Config](lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. (Please refer to [Training parameters](##Training-parameters) for detail description)
 2. Run the command to start training:
 
 ```
@@ -111,11 +111,11 @@ This part list the key parameters for training.
 
  Please refer to the original [InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip) repo for the other parameters that are not listed above.
  
-## Citation
+ ## Citation
  
  
-## Acknowledgement
+ ## Acknowledgement
 
-This project is built upon the giant sholders of InstructBLIP. Great thanks to them!
+This project is built upon the gaint sholders of InstructBLIP. Great thanks to them!
 
 InstructBLIP: https://github.com/salesforce/LAVIS/tree/main/projects/instructblip
