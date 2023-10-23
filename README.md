@@ -10,9 +10,13 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 <img src="docs/antifakeprompt.png" width="600">
 </p>
 
-## Environment preparation
+<p align="center">
+<img src="docs/results.png" width="600">
+</p>
 
-### Construct the environment
+## Prerequisites
+
+### Environment installation
 
 ```
 git clone https://github.com/thisismingggg/AntifakePrompt.git
