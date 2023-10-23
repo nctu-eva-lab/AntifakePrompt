@@ -1,5 +1,10 @@
 # AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors
 
+<div align="center">
+    <a><img src="docs/NYCU_logo.jpg"  height="100px" ></a>
+    <a><img src="docs/EVA_logo.jpg"  height="100px" ></a>
+</div>
+
 This is the official implementation of AntifakePrompt [paper].
 
 ## Introduction
@@ -23,7 +28,6 @@ git clone https://github.com/thisismingggg/AntifakePrompt.git
 cd AntifakePrompt
 pip install -e .
 ```
-
 ### Vicuna weights preparation
 
 AntifakePrompt uses frozen Vicuna 7B models. Please first follow the [instructions](https://github.com/lm-sys/FastChat) to prepare Vicuna v1.3 weights. Then modify the `llm_model` in the [Model Config](lavis/configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml) to the folder that contains Vicuna weights.
