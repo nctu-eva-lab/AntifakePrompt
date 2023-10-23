@@ -16,7 +16,7 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 </p>
 
 <p align="center">
-<img src="docs/results.jpg" width="600">
+<img src="docs/results.jpg" width="800">
 </p>
 
 ## Prerequisites
