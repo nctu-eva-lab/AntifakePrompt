@@ -161,4 +161,4 @@ debug*/
 cache/
 
 deepfake-detection/log/*
-cam_result
+cam_results
