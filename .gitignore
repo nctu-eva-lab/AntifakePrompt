@@ -162,4 +162,4 @@ cache/
 
 deepfake-detection/log/*
 deepfake-detection/cam_result/
-deepfake-detection/ignore.txt
+../deepfake-detection/*.txt
