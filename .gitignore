@@ -162,4 +162,3 @@ cache/
 
 deepfake-detection/log/*
 **/cam_result/**/*
-*.txt
