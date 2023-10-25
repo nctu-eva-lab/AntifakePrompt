@@ -6,4 +6,4 @@ torchrun \
     --nproc_per_node=4 \
     --rdzv_backend c10d \
     --rdzv_endpoint localhost:25702 \
-    LAVIS/train.py --cfg-path LAVIS/lavis/projects/lora/lora_train.yaml
+    AntifakePrompt/train.py --cfg-path AntifakePrompt/lavis/projects/lora/lora_train.yaml

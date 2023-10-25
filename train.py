@@ -91,9 +91,9 @@ def main():
 
     task = tasks.setup_task(cfg)
     datasets = task.build_datasets(cfg)
-    print(f'dataset OK!')
+    # print(f'dataset OK!')
     model = task.build_model(cfg)
-    print("build model OK!")
+    # print("build model OK!")
 
     runner = get_runner_class(cfg)(
         cfg=cfg, job_id=job_id, task=task, model=model, datasets=datasets

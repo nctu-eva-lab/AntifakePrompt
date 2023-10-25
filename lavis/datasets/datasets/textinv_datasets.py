@@ -22,8 +22,10 @@ from lavis.datasets.datasets.caption_datasets import __DisplMixin
 import torchvision.transforms as transforms
 import torch
 
+EXT = ['.jpg', '.jpeg', '.png']
+
 class TextInvDataset(BaseDataset):
-    def __init__(self, vis_processor, text_processor, vis_root, ann_paths):
+    def __init__(self, vis_processor, text_processor, vis_root, ann_paths, real_dir, fake_dir, real_label, fake_label):
         """
         vis_root (string): Root directory of images (e.g. coco/images/)
         ann_root (string): directory to store the annotation file
@@ -35,10 +37,30 @@ class TextInvDataset(BaseDataset):
         self.text_processor = text_processor
         self.PIL2Tensor = transforms.PILToTensor()
 
-        self.image_root = vis_root
+        real_paths = []
+        for root, dirs, files in os.walk(real_dir):
+            for file in files:
+                if(os.path.splitext(file)[-1] in EXT):
+                    real_paths.append(os.path.join(root, file))
+        real_labels = [real_label] * len(real_paths)
+        
+        fake_paths = []
+        for root, dirs, files in os.walk(fake_dir):
+            for file in files:
+                if(os.path.splitext(file)[-1] in EXT):
+                    fake_paths.append(os.path.join(root, file))
+        fake_labels = [fake_label] * len(fake_paths)
+                    
+        self.path_and_labels = pd.DataFrame({
+            "img_path": real_paths + fake_paths,
+            "label": real_labels + fake_labels
+        })
+        self.path_and_labels.set_index("img_path", inplace=True)
+        
+        # self.image_root = vis_root
 
-        for ann_path in ann_paths:
-            self.path_and_labels = pd.read_csv(ann_path, index_col="img_path")
+        # for ann_path in ann_paths:
+        #     self.path_and_labels = pd.read_csv(ann_path, index_col="img_path")
 
     def __len__(self):
         # overwrite __len__() in BaseDataset

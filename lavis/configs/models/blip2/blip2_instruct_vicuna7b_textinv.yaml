@@ -9,8 +9,8 @@ model:
   load_pretrained: True
 
   pretrained: "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/InstructBLIP/instruct_blip_vicuna7b_trimmed.pth"
-  # finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP.pth" # SD2+IP (90k, postfix)
-  finetuned: "/home/iammingggg/detection/LAVIS/checkpoints/COCO_90k_SD2_SD2IP_lama.pth" # SD2+IP+LaMa (90k, postfix)
+  finetuned: "/home/iammingggg/detection/AntifakePrompt/checkpoints/COCO_90k_SD2_SD2IP.pth" # SD2+IP (90k, postfix)
+  # finetuned: "/home/iammingggg/detection/AntifakePrompt/checkpoints/COCO_90k_SD2_SD2IP_lama.pth" # SD2+IP+LaMa (90k, postfix)
   
   # vit encoder
   image_size: 224
@@ -38,21 +38,21 @@ preprocess:
         train:
           name: "blip2_image_train_textinv"
           image_size: 224
-          # # COCO+SD2+SD2IP (90K)
-          # mean: [0.4730, 0.4499, 0.4129]
-          # std: [0.2780, 0.2713, 0.2872]
-          # COCO+SD2+SD2IP+LaMa (90K)
-          mean: [0.4722, 0.4490, 0.4117]
-          std: [0.2772, 0.2708, 0.2867]
+          # COCO+SD2+SD2IP (90K)
+          mean: [0.4730, 0.4499, 0.4129]
+          std: [0.2780, 0.2713, 0.2872]
+          # # COCO+SD2+SD2IP+LaMa (90K)
+          # mean: [0.4722, 0.4490, 0.4117]
+          # std: [0.2772, 0.2708, 0.2867]
         eval:
           name: "blip_image_eval_textinv"
           image_size: 224
-          # # COCO+SD2+SD2IP (90K)
-          # mean: [0.4730, 0.4499, 0.4129]
-          # std: [0.2780, 0.2713, 0.2872]
-          # COCO+SD2+SD2IP+LaMa (90K)
-          mean: [0.4722, 0.4490, 0.4117]
-          std: [0.2772, 0.2708, 0.2867]
+          # COCO+SD2+SD2IP (90K)
+          mean: [0.4730, 0.4499, 0.4129]
+          std: [0.2780, 0.2713, 0.2872]
+          # # COCO+SD2+SD2IP+LaMa (90K)
+          # mean: [0.4722, 0.4490, 0.4117]
+          # std: [0.2772, 0.2708, 0.2867]
     text_processor:
         train:
           name: "blip_question_textinv"

@@ -67,7 +67,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         
         self.tokenizer = self.init_tokenizer(truncation_side="left")
 
-        print('tokenizer OK!')
+        # print('tokenizer OK!')
 
         #------ Visual encoder ------#
         
@@ -86,7 +86,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         for name, param in self.ln_vision.named_parameters():
             param.requires_grad = False
         
-        print('visual encoder OK!')
+        # print('visual encoder OK!')
 
         #------ Q-former ------#
         
@@ -114,7 +114,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         
         self.query_tokens.requires_grad = False
         
-        print('Q-former OK!')
+        # print('Q-former OK!')
         
         #------ LLM ------#
         
@@ -160,7 +160,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
 
         self.qformer_text_input = qformer_text_input
         
-        print('LLM OK!')
+        # print('LLM OK!')
     
     
     @classmethod
