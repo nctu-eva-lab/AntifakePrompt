@@ -16,7 +16,7 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 </p>
 
 <p align="center">
-<img src="docs/results.jpg" width="800">
+<img src="docs/results.jpg" width="600">
 </p>
 
 ## Prerequisites
@@ -73,26 +73,9 @@ If the data only contains real images or fake images, you can just assign one of
 
 ## Training
 
-### Prepare Dataset
-
-Following the steps below, you will get a **.csv file** containing all the image paths and corresponding label for training and testing.
-
-1. Put the real images in a folder, and put the fake images in another folder.
-2. Run the command
-```
-cd LAVIS/utils
-python gen_path_label.py --real_dir <real_image_directory> --fake_dir <fake_image_diretory> --real_label <real_label> --fake_label <fake_label>  --out <out_csv_file>
-```
-- `real_dir` / `fake_dir` : the directory to your real / fake images.
-- `real_label` / `fake_label` : the ground truth label for real / fake images.
-- `out` : the path to the output .csv file.
-
-3. You will get an output .csv file recording each image path and corresponding ground truth label.
-4. Go to [Dataset Config](lavis/configs/datasets/textinv/textinv.yaml), set the `url` and `storage` key value to the path of generated .csv file for train/val/test dataset.
-
-### Start training
-1. Go to [Training Config](lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. 
-2. Run the command to start training:
+1. Go to [Dataset Config](lavis/configs/datasets/textinv/textinv.yaml), set `real_dir` and `fake_dir` for train/valid/test split.
+2. Go to [Training Config](lavis/projects/textual-inversion/textinv_train.yaml), set the parameters properly. 
+3. Run the command to start training:
 
 ```
 sh LAVIS/run_scripts/textual-inversion/train.sh
