@@ -26,7 +26,7 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 ### Environment installation
 
 ```
-git clone https://github.com/thisismingggg/AntifakePrompt.git
+git clone https://github.com/nctu-eva-lab/AntifakePrompt
 cd AntifakePrompt
 pip install -e .
 ```
