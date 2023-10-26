@@ -2,7 +2,7 @@
 
 <div align="center">
     <a><img src="docs/NYCU_logo.png"  height="100px" ></a>
-    <a><img src="docs/EVA_logo.png"  height="100px" ></a>
+    <a><img src="docs/EVA_logo.png"  height="120px" ></a>
 </div>
 
 This is the official implementation of AntifakePrompt [paper].
