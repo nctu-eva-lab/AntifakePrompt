@@ -2,7 +2,7 @@
 
 <div align="center">
     <a><img src="docs/NYCU_logo.png"  height="100px" ></a>
-    <a><img src="docs/EVA_logo.png"  height="120px" ></a>
+    <a><img src="docs/EVA_logo.png"  height="100px" ></a>
 </div>
 
 This is the official implementation of AntifakePrompt [paper].
@@ -16,7 +16,7 @@ In this paper, being inspired by the zero-shot advantages of Vision-Language Mod
 </p>
 
 <p align="center">
-<img src="docs/results.jpg" width="600">
+<img src="docs/results.jpg" width="800">
 </p>
 
 ## Prerequisites
