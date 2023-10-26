@@ -52,6 +52,7 @@ from lavis.models.clip_models.model import CLIP
 from lavis.models.gpt_models.gpt_dialogue import GPTDialogue
 
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv import Blip2VicunaInstructTextinv
+from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_cam import Blip2VicunaInstructTextinvCam
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_freezeLLM import Blip2VicunaInstructTextinvFreezeLLM
 from lavis.models.blip2_models.blip2_vicuna_instruct_textinv_freezeQformer import Blip2VicunaInstructTextinvFreezeQformer
 from lavis.models.blip2_models.blip2_vicuna_instruct_lora import Blip2VicunaInstructLoRA
@@ -98,6 +99,7 @@ __all__ = [
     "Blip2VicunaInstructTextinvFreezeLLM",
     "Blip2VicunaInstructTextinvFreezeQformer",
     "Blip2VicunaInstructLoRA",
+    "Blip2VicunaInstructTextinvCam",
 ]
 
 

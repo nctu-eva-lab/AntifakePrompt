@@ -4,7 +4,7 @@
  # For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
 model:
-  arch: blip2_vicuna_instruct_textinv
+  arch: blip2_vicuna_instruct_textinv_cam
   load_finetuned: True
   load_pretrained: True
 

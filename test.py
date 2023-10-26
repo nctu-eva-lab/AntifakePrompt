@@ -207,7 +207,7 @@ class InstructBLIP():
 def arg_parser():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--question', type=str, nargs='+', help='The prompt question.')
+    #parser.add_argument('--question', type=str, nargs='+', help='The prompt question.')
     parser.add_argument('--img_path', type=str, default=None, help='The path to the target image.')
     parser.add_argument('--real_dir', type=str, default=None, help='The path to the real directory.')
     parser.add_argument('--fake_dir', type=str, default=None, help='The path to the fake directory.')
@@ -224,7 +224,8 @@ def main():
     
     args = arg_parser()
     
-    question = ' '.join(args.question)
+    #question = ' '.join(args.question)
+    question = "Is this photo real [*]?"
     logPath = args.log
     device = args.device
     model_name = args.model_name

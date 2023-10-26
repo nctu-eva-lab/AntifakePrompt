@@ -15,8 +15,8 @@ from lavis.common.registry import registry
 from lavis.models.blip2_models.blip2 import Blip2Base, disabled_train
 from lavis.models.blip2_models.Qformer import BertConfig, BertLMHeadModelTextualInversion
 
-@registry.register_model("blip2_vicuna_instruct_textinv")
-class Blip2VicunaInstructTextinv(Blip2Base):
+@registry.register_model("blip2_vicuna_instruct_textinv_cam")
+class Blip2VicunaInstructTextinvCam(Blip2Base):
     """
     BLIP2 Vicuna model.
     Supported model types:
@@ -28,7 +28,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
     """
 
     PRETRAINED_MODEL_CONFIG_DICT = {
-        "vicuna7b": "configs/models/blip2/blip2_instruct_vicuna7b_textinv.yaml",
+        "vicuna7b": "configs/models/blip2/blip2_instruct_vicuna7b_textinv_cam.yaml",
         "vicuna13b": "configs/models/blip2/blip2_instruct_vicuna13b.yaml",
     }
 
@@ -67,7 +67,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         
         self.tokenizer = self.init_tokenizer(truncation_side="left")
 
-        # print('tokenizer OK!')
+        print('tokenizer OK!')
 
         #------ Visual encoder ------#
         
@@ -86,7 +86,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         for name, param in self.ln_vision.named_parameters():
             param.requires_grad = False
         
-        # print('visual encoder OK!')
+        print('visual encoder OK!')
 
         #------ Q-former ------#
         
@@ -114,7 +114,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         
         self.query_tokens.requires_grad = False
         
-        # print('Q-former OK!')
+        print('Q-former OK!')
         
         #------ LLM ------#
         
@@ -160,7 +160,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
 
         self.qformer_text_input = qformer_text_input
         
-        # print('LLM OK!')
+        print('LLM OK!')
     
     
     @classmethod
@@ -241,13 +241,14 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         llm_tokens['attention_mask'] = torch.stack(llm_tokens['attention_mask'])
         return llm_tokens, input_part_targets_len
 
-    def forward(self, samples):
+    def forward_old(self, image):
         # print('-----------------')
         # print(samples["text_input"])
         # print(samples["text_output"])
         # print('-----------------')
 
-        image = samples["image"]
+        # image = samples["image"]
+        samples = {"text_input": "Is this photo real [*]?", "text_output": "yes"}
         with self.maybe_autocast():
             image_embeds = self.ln_vision(self.visual_encoder(image))
         image_atts = torch.ones(image_embeds.size()[:-1], dtype=torch.long).to(image.device)
@@ -360,7 +361,8 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         # print(outputs.logits.shape)
         # print(outputs.logits)
 
-        return {"loss": loss}
+        # return {"loss": loss}
+        return loss
 
     @torch.no_grad()
     def generate(
@@ -612,14 +614,20 @@ class Blip2VicunaInstructTextinv(Blip2Base):
 
         return self._predict_class(samples, candidates, n_segments)
 
-    def _predict_class(
-        self,
-        samples,
-        candidates,
-        n_segments=1,
-    ):
-        image = samples["image"]
-        prompt = samples["prompt"]
+    # def _predict_class(
+    #     self,
+    #     samples,
+    #     candidates,
+    #     n_segments=1,
+    # ):
+    def forward(self, image):
+        # image = samples["image"]
+        # prompt = samples["prompt"]
+        
+        samples = {}
+        prompt = "Is this photo real [*]?"
+        candidates = ["yes", "no"]
+        n_segments = 1
 
         bs = image.size(0)
 
@@ -731,6 +739,7 @@ class Blip2VicunaInstructTextinv(Blip2Base):
         # with self.maybe_autocast(dtype=torch.bfloat16):
         with self.maybe_autocast():
             all_losses = []
+            all_logits = []
             for n in range(n_segments):
                 seg_len = n_cands // n_segments
                 if n == (n_segments - 1):
@@ -746,6 +755,8 @@ class Blip2VicunaInstructTextinv(Blip2Base):
                     # truncation=True,
                     # max_length=self.max_output_txt_len,
                 ).to(image.device)
+                
+                self.this_output_tokens = this_output_tokens
 
                 this_input_tokens_ids = text_input_tokens.input_ids.repeat_interleave(seg_len, dim=0)
                 this_input_tokens_atts = text_input_tokens.attention_mask.repeat_interleave(seg_len, dim=0)
@@ -805,15 +816,29 @@ class Blip2VicunaInstructTextinv(Blip2Base):
                 )
 
                 loss = outputs.loss
+                logit = outputs.logits
 
                 loss = loss.reshape(bs, seg_len)
                 # output_class_ranks = torch.argsort(loss, dim=-1)
                 all_losses.append(loss)
+                all_logits.append(logit)
 
             all_losses = torch.cat(all_losses, dim=-1)
             output_class_ranks = torch.argsort(all_losses, dim=-1)
+            
+            all_logits = torch.nn.functional.softmax(-all_losses, dim=-1)
+            # self.all_logits = all_logits
+            
+            # yes_logit = all_logits[0][0, 1, self.this_output_tokens.input_ids[0, 1].item()]
+            # no_logit = all_logits[0][1, 1, self.this_output_tokens.input_ids[1, 1].item()]
+            # bin_logits = torch.cat([yes_logit, no_logit]).unsqueeze(0)
+            # self.bin_logits = bin_logits
+            # print(bin_logits)
 
-        return output_class_ranks
+        # return output_class_ranks
+        return all_logits
+        # return all_losses
+        # return bin_logits
 
     def _lemmatize(self, answers):
         def apply(answer):

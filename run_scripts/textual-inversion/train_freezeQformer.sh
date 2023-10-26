@@ -6,4 +6,4 @@ torchrun \
     --nproc_per_node=3 \
     --rdzv_backend c10d \
     --rdzv_endpoint localhost:25703 \
-    LAVIS/train.py --cfg-path LAVIS/lavis/projects/textual-inversion/textinv_freezeQformer_train.yaml
+    AntifakePrompt/train.py --cfg-path AntifakePrompt/lavis/projects/textual-inversion/textinv_freezeQformer_train.yaml
