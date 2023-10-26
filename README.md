@@ -41,14 +41,23 @@ We provide the best two checkpoints in our experiments:
 cd ckpt
 sh download_checkpoints.sh
 ```
-The downloaded checkpoints will be saved in `LAVIS/ckpt`.
-
-
+The downloaded checkpoints will be saved in `ckpt`.
 
 | Checkpoint name                                                                                                       | Training dataset  | Average Acc. (%) |
 | --------------------------------------------------------------------------------------------------------------------- |:----------------- | ---------------- |
 | [COCO_150k_SD2_SD2IP.pth](https://drive.google.com/file/d/1fu8oxPI0eXrqtlgYKg00SfgXC-jZVCaT/view?usp=share_link)      | COCO + SD2        | 91.59            |
 | [COCO_150k_SD2_SD2IP_lama.pth](https://drive.google.com/file/d/1bltqH3KPT03ypb49c4bs0VXKsaY6lKb7/view?usp=share_link) | COCO + SD2 + LaMa | 92.60            |
+
+### Dataset
+We provide our training, validation and testing dataset in the paper, as the following table shows.
+
+
+| Split | Real dataset | Fake dataset                                                                                                                                                                          |
+| ----- | ------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Train](https://eva-lab.synology.me:8001/sharing/6EkZkWYI1) | COCO         | SD2                                                                                                                                                                                   |
+| [Val](https://eva-lab.synology.me:8001/sharing/12NEnnsQ1)   | COCO         | SD2                                                                                                                                                                                   |
+| [Test](https://eva-lab.synology.me:8001/sharing/LjzEDo7R0)  | COCO, Flickr | SD2, SDXL, IF, DALLE-2, SGXL, ControlNet, DeeperForensic, Inpainting(LaMa), Inpainting(SD2), SuperRes(LTE), SuperRes(SD2), Adversarial attack, Backdoor attack, Data poisoning attack |
+
 
 
 ## Testing
