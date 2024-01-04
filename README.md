@@ -89,7 +89,7 @@ If the data only contains real images or fake images, you can just assign one of
 3. Run the command to start training:
 
 ```
-sh LAVIS/run_scripts/textual-inversion/train.sh
+sh AntifakePrompt/run_scripts/textual-inversion/train.sh
 ```
  
  ## Citation
