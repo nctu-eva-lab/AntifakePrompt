@@ -47,8 +47,8 @@ The downloaded checkpoints will be saved in `ckpt`.
 
 | Checkpoint name                                                                                                       | Training dataset  | Average Acc. (%) |
 | --------------------------------------------------------------------------------------------------------------------- |:----------------- | ---------------- |
-| [COCO_150k_SD2_SD2IP.pth](https://drive.google.com/file/d/1EUnVG4OZZPXeOyWaa5P590yCKGH-nunQ/view?usp=drive_link)      | COCO + SD3        | 91.81            |
-| [COCO_150k_SD2_SD2IP_lama.pth](https://drive.google.com/file/d/1qnZfCknNHgC-Nhlwbab9Jg3x9sOof3gG/view?usp=drive_link) | COCO + SD3 + LaMa | 94.50            |
+| [COCO_150k_SD3_SD2IP.pth](https://drive.google.com/file/d/1EUnVG4OZZPXeOyWaa5P590yCKGH-nunQ/view?usp=drive_link)      | COCO + SD3        | 91.81            |
+| [COCO_150k_SD3_SD2IP_lama.pth](https://drive.google.com/file/d/1qnZfCknNHgC-Nhlwbab9Jg3x9sOof3gG/view?usp=drive_link) | COCO + SD3 + LaMa | 94.50            |
 
 ### Dataset
 We provide our training, validation and testing dataset in the paper, as the following table shows.
