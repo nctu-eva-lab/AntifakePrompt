@@ -26,7 +26,7 @@ Deep generative models can create remarkably photorealistic fake images while ra
 ### Environment installation
 
 ```
-git clone https://github.com/nctu-eva-lab/AntifakePrompt
+[Clone this Anonymous repository]
 cd AntifakePrompt
 pip install -e .
 ```
@@ -36,8 +36,8 @@ AntifakePrompt uses frozen Vicuna 7B models. Please first follow the [instructio
 
 ### Checkpoints downloading
 We provide the best two checkpoints in our experiments:
-- COCO+SD2 (150k training images)
-- COCO+SD2+LaMa (180k training images)
+- COCO+SD3 (150k training images)
+- COCO+SD3+LaMa (180k training images)
 
 ```
 cd ckpt
@@ -47,8 +47,8 @@ The downloaded checkpoints will be saved in `ckpt`.
 
 | Checkpoint name                                                                                                       | Training dataset  | Average Acc. (%) |
 | --------------------------------------------------------------------------------------------------------------------- |:----------------- | ---------------- |
-| [COCO_150k_SD2_SD2IP.pth](https://drive.google.com/file/d/1fu8oxPI0eXrqtlgYKg00SfgXC-jZVCaT/view?usp=share_link)      | COCO + SD2        | 91.59            |
-| [COCO_150k_SD2_SD2IP_lama.pth](https://drive.google.com/file/d/1bltqH3KPT03ypb49c4bs0VXKsaY6lKb7/view?usp=share_link) | COCO + SD2 + LaMa | 92.60            |
+| [COCO_150k_SD3_SD2IP.pth](https://drive.google.com/file/d/1EUnVG4OZZPXeOyWaa5P590yCKGH-nunQ/view?usp=drive_link)      | COCO + SD3        | 91.81            |
+| [COCO_150k_SD3_SD2IP_lama.pth](https://drive.google.com/file/d/1qnZfCknNHgC-Nhlwbab9Jg3x9sOof3gG/view?usp=drive_link) | COCO + SD3 + LaMa | 94.50            |
 
 ### Dataset
 We provide our training, validation and testing dataset in the paper, as the following table shows.
