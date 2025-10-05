@@ -97,7 +97,7 @@ sh AntifakePrompt/run_scripts/textual-inversion/train.sh
  
  ## Acknowledgement
 
-This project is built upon the the following gaint sholders. Great thanks to them!
+This project is built upon the the following giant shoulders. Great thanks to them!
 
 - InstructBLIP: https://github.com/salesforce/LAVIS/tree/main/projects/instructblip
 - Stable diffusion: https://github.com/Stability-AI/stablediffusion
